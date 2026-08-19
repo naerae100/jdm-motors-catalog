@@ -153,7 +153,7 @@ function Catalogue() {
         </div>
       </div>
 
-      <header className="sticky top-0 z-40 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
+      <header className="sticky top-0 z-40 border-b border-slate-800 bg-slate-950/95 backdrop-blur supports-[backdrop-filter]:bg-slate-950/80">
         <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <div className="flex min-w-0 items-center gap-4">
             <img
@@ -162,10 +162,10 @@ function Catalogue() {
               className="h-16 w-auto shrink-0 object-contain rounded bg-white p-1.5"
             />
             <div className="min-w-0 hidden sm:block">
-              <p className="truncate font-display text-xl font-bold uppercase leading-none tracking-wide text-foreground">
+              <p className="truncate font-display text-xl font-bold uppercase leading-none tracking-wide text-slate-100">
                 Miami Motors
               </p>
-              <p className="truncate text-[11px] text-muted-foreground mt-1.5">
+              <p className="truncate text-[11px] text-slate-400 mt-1.5">
                 Used Auto Spare Parts Trading Co. LLC · Sharjah, UAE
               </p>
             </div>
@@ -190,22 +190,22 @@ function Catalogue() {
         </div>
       </header>
 
-      <section className="border-b border-primary/10 bg-card relative overflow-hidden">
+      <section className="border-b border-slate-800 bg-slate-950 relative overflow-hidden">
         {/* Abstract background glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background/50 to-background pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-slate-950 to-slate-950 pointer-events-none" />
 
         <div className="mx-auto max-w-[1600px] px-4 py-16 sm:px-6 sm:py-24 relative z-10 flex flex-col items-center text-center">
           <Badge
             variant="outline"
-            className="mb-6 text-primary border-primary/30 bg-primary/5 uppercase tracking-widest text-[10px] px-3 py-1"
+            className="mb-6 text-primary border-primary/30 bg-primary/10 uppercase tracking-widest text-[10px] px-3 py-1"
           >
             Worldwide Wholesale Export
           </Badge>
-          <h1 className="max-w-4xl text-4xl font-black uppercase tracking-tight leading-[1.05] sm:text-6xl text-foreground">
+          <h1 className="max-w-4xl text-4xl font-black uppercase tracking-tight leading-[1.05] sm:text-6xl text-slate-50">
             Premium Japanese & Korean Engines, <br className="hidden sm:block" />
             <span className="text-primary">Half Cuts & Gearboxes</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base text-slate-300 sm:text-lg">
             Directly from our Sharjah yard to Africa, the Gulf, South America, and Asia. Browse our
             massive container-ready inventory and contact us for bulk pricing.
           </p>
@@ -217,7 +217,7 @@ function Catalogue() {
               "Worldwide Shipping",
               "Bulk Only",
             ].map((t) => (
-              <span key={t} className="flex items-center gap-2 text-muted-foreground">
+              <span key={t} className="flex items-center gap-2 text-slate-400">
                 <div className="size-1.5 rounded-full bg-primary/70" />
                 <span className="label-caps">{t}</span>
               </span>
