@@ -1,4 +1,4 @@
-import { CheckSquare, Square } from "lucide-react";
+import { CheckSquare, Square, Facebook, Images, Instagram, MessageCircle } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
