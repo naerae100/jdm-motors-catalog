@@ -1,5 +1,9 @@
-import { Facebook, Instagram, MessageCircle } from "lucide-react";
+import { Download, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -22,7 +26,40 @@ export function ListingDialog({
   onClose: () => void;
 }) {
   const [active, setActive] = useState(0);
+  const [isDownloading, setIsDownloading] = useState(false);
+
   useEffect(() => setActive(0), [listing?.id]);
+
+  const handleDownloadAll = async () => {
+    if (!listing) return;
+    setIsDownloading(true);
+    try {
+      const zip = new JSZip();
+      const folderName = `${listing.make}_${listing.code}`.replace(/\s+/g, "_");
+      const folder = zip.folder(folderName);
+
+      if (!folder) throw new Error("Could not create zip folder");
+
+      const promises = listing.images.map(async (src, i) => {
+        const response = await fetch(src);
+        const blob = await response.blob();
+
+        // Extract original extension or default to jpg
+        const ext = src.split(".").pop()?.split("?")[0] || "jpg";
+        folder.file(`${folderName}_photo_${i + 1}.${ext}`, blob);
+      });
+
+      await Promise.all(promises);
+
+      const content = await zip.generateAsync({ type: "blob" });
+      saveAs(content, `MiamiMotors_${folderName}.zip`);
+    } catch (error) {
+      console.error("Error zipping images:", error);
+      alert("There was an error downloading the images. Please try again.");
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   if (!listing) return null;
 
@@ -41,14 +78,32 @@ export function ListingDialog({
 
         <div className="grid gap-6 md:grid-cols-[1.6fr_1fr]">
           <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm font-medium text-muted-foreground">
+                Photos ({listing.images.length})
+              </h3>
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-8 text-xs"
+                onClick={handleDownloadAll}
+                disabled={isDownloading}
+              >
+                <Download className="size-3 mr-2" />
+                {isDownloading ? "Zipping..." : "Save All (ZIP)"}
+              </Button>
+            </div>
+
             <div className="overflow-hidden rounded-lg border bg-muted">
-              <img
-                src={listing.images[active]}
-                alt={`${listing.make} ${listing.code} photo ${active + 1}`}
-                width={1024}
-                height={768}
-                className="aspect-video w-full object-cover"
-              />
+              <Zoom>
+                <img
+                  src={listing.images[active]}
+                  alt={`${listing.make} ${listing.code} photo ${active + 1}`}
+                  width={1024}
+                  height={768}
+                  className="aspect-video w-full object-cover"
+                />
+              </Zoom>
             </div>
             {listing.images.length > 1 && (
               <div className="flex flex-wrap gap-2">

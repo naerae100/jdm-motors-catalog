@@ -112,7 +112,7 @@ function Catalogue() {
   return (
     <div className="min-h-screen">
       {/* Top Bar */}
-      <div className="bg-background border-b border-border/40 py-2 text-xs text-muted-foreground hidden sm:block">
+      <div className="bg-background border-b border-border/40 py-1.5 text-[11px] text-muted-foreground hidden sm:block">
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-4 sm:px-6">
           <div className="flex items-center gap-6">
             <a
@@ -154,18 +154,18 @@ function Catalogue() {
       </div>
 
       <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-3 px-4 py-3 sm:px-6">
-          <div className="flex min-w-0 items-center gap-4">
+        <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-3 px-4 py-2 sm:px-6">
+          <div className="flex min-w-0 items-center gap-3">
             <img
               src="/logo.png"
               alt="Miami Motors"
-              className="h-16 w-auto shrink-0 object-contain rounded bg-white p-1.5 shadow-sm"
+              className="h-10 sm:h-12 w-auto shrink-0 object-contain rounded bg-white p-1 shadow-sm"
             />
             <div className="min-w-0 hidden sm:block">
-              <p className="truncate font-display text-xl font-bold uppercase leading-none tracking-wide text-foreground">
+              <p className="truncate font-display text-lg font-bold uppercase leading-none tracking-wide text-foreground">
                 Miami Motors
               </p>
-              <p className="truncate text-[11px] text-muted-foreground mt-1.5">
+              <p className="truncate text-[10px] text-muted-foreground mt-1">
                 Used Auto Spare Parts Trading Co. LLC · Sharjah, UAE
               </p>
             </div>
@@ -173,8 +173,8 @@ function Catalogue() {
           <Button
             asChild
             variant="whatsapp"
-            size="lg"
-            className="rounded-full shadow-lg shadow-whatsapp/20 font-bold tracking-wide"
+            size="sm"
+            className="rounded-full shadow-lg shadow-whatsapp/20 font-bold tracking-wide sm:px-6 sm:h-10"
           >
             <a href={COMPANY_WHATSAPP} target="_blank" rel="noopener noreferrer">
               <svg
