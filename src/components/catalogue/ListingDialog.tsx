@@ -1,4 +1,4 @@
-import { Download, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { Download, Facebook, FileText, Instagram, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/dialog";
 import type { Listing } from "@/data/listings";
 import { whatsappLink } from "@/lib/catalogue";
+import { generateSpecSheet } from "@/lib/pdf";
 import { cn } from "@/lib/utils";
 
 export function ListingDialog({
@@ -162,7 +163,15 @@ export function ListingDialog({
                   <MessageCircle className="size-4" /> Enquire on WhatsApp
                 </a>
               </Button>
-              <div className="grid grid-cols-2 gap-2">
+              <Button
+                variant="outline"
+                className="w-full font-semibold"
+                onClick={() => generateSpecSheet(listing)}
+              >
+                <FileText className="size-4 mr-2 text-muted-foreground" />
+                Download PDF Specs
+              </Button>
+              <div className="grid grid-cols-2 gap-2 pt-2">
                 <Button
                   asChild
                   variant="outline"

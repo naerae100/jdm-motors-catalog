@@ -59,6 +59,24 @@ function Catalogue() {
   const [filters, setFilters] = useState<Filters>(emptyFilters);
   const [selected, setSelected] = useState<Listing | null>(null);
   const [sheetOpen, setSheetOpen] = useState(false);
+  const [inquiryCart, setInquiryCart] = useState<string[]>([]);
+
+  const toggleInquiry = (id: string) => {
+    setInquiryCart((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+  };
+
+  const handleBulkInquiry = () => {
+    const selectedListings = inquiryCart
+      .map((id) => selectCatalogue(emptyFilters).results.find((l) => l.id === id))
+      .filter(Boolean);
+
+    let message = `Hello Miami Motors, I am interested in requesting a bulk quote for the following ${inquiryCart.length} items:\n\n`;
+    selectedListings.forEach((l, i) => {
+      message += `${i + 1}. ${l?.make} ${l?.code} (${l?.displacement} ${l?.fuel}) - Ref: ${l?.id}\n`;
+    });
+
+    window.open(`${COMPANY_WHATSAPP}?text=${encodeURIComponent(message)}`, "_blank");
+  };
 
   const data = useMemo(() => selectCatalogue(filters), [filters]);
 
@@ -339,12 +357,40 @@ function Catalogue() {
           ) : (
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
               {data.results.map((l) => (
-                <ListingCard key={l.id} listing={l} onOpen={() => setSelected(l)} />
+                <ListingCard
+                  key={l.id}
+                  listing={l}
+                  onOpen={() => setSelected(l)}
+                  inInquiryCart={inquiryCart.includes(l.id)}
+                  onToggleInquiry={toggleInquiry}
+                />
               ))}
             </div>
           )}
         </div>
       </main>
+
+      {inquiryCart.length > 0 && (
+        <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-2 border-t bg-background/95 p-4 shadow-[0_-10px_30px_rgba(0,0,0,0.1)] backdrop-blur supports-[backdrop-filter]:bg-background/80">
+          <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-2 sm:px-6">
+            <div>
+              <p className="font-semibold">{inquiryCart.length} items selected</p>
+              <p className="hidden text-sm text-muted-foreground sm:block">
+                Ready to request your wholesale quote?
+              </p>
+            </div>
+            <div className="flex items-center gap-3">
+              <Button variant="ghost" onClick={() => setInquiryCart([])}>
+                Clear
+              </Button>
+              <Button variant="whatsapp" onClick={handleBulkInquiry}>
+                <MessageCircle className="mr-2 size-4" />
+                Request Bulk Quote
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <footer className="mt-10 border-t bg-steel text-steel-foreground">
         <div className="mx-auto grid max-w-[1600px] gap-6 px-4 py-10 sm:grid-cols-3 sm:px-6">

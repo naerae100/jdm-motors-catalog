@@ -1,4 +1,4 @@
-import { Facebook, Images, Instagram, MessageCircle } from "lucide-react";
+import { CheckSquare, Square } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -6,15 +6,31 @@ import type { Listing } from "@/data/listings";
 import { whatsappLink } from "@/lib/catalogue";
 import { cn } from "@/lib/utils";
 
-export function ListingCard({ listing, onOpen }: { listing: Listing; onOpen: () => void }) {
+export function ListingCard({
+  listing,
+  onOpen,
+  inInquiryCart = false,
+  onToggleInquiry,
+}: {
+  listing: Listing;
+  onOpen: () => void;
+  inInquiryCart?: boolean;
+  onToggleInquiry?: (id: string) => void;
+}) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-lg border bg-card shadow-panel transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/60">
-      <button
-        type="button"
-        onClick={onOpen}
-        className="relative block aspect-[4/3] w-full overflow-hidden bg-muted text-left"
-        aria-label={`View details for ${listing.make} ${listing.code}`}
-      >
+    <article
+      className={cn(
+        "group flex flex-col overflow-hidden rounded-lg border bg-card shadow-panel transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
+        inInquiryCart ? "border-primary ring-1 ring-primary" : "hover:border-primary/60",
+      )}
+    >
+      <div className="relative block aspect-[4/3] w-full overflow-hidden bg-muted text-left">
+        <button
+          type="button"
+          onClick={onOpen}
+          className="size-full absolute inset-0 z-10"
+          aria-label={`View details for ${listing.make} ${listing.code}`}
+        />
         <img
           src={listing.images[0]}
           alt={`${listing.make} ${listing.code} ${listing.displacement} used ${listing.category.toLowerCase()}`}
@@ -23,15 +39,36 @@ export function ListingCard({ listing, onOpen }: { listing: Listing; onOpen: () 
           height={768}
           className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <span className="absolute left-2 top-2 rounded bg-steel/90 px-2 py-0.5 text-[11px] label-caps text-steel-foreground">
+        <span className="absolute left-2 top-2 z-20 rounded bg-steel/90 px-2 py-0.5 text-[11px] label-caps text-steel-foreground pointer-events-none">
           {listing.category}
         </span>
+
+        {onToggleInquiry && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              onToggleInquiry(listing.id);
+            }}
+            className={cn(
+              "absolute right-2 top-2 z-20 flex size-8 items-center justify-center rounded-md bg-black/40 backdrop-blur text-white transition-colors hover:bg-black/60",
+              inInquiryCart && "bg-primary text-primary-foreground hover:bg-primary/90",
+            )}
+            aria-label={inInquiryCart ? "Remove from inquiry" : "Add to inquiry"}
+          >
+            {inInquiryCart ? (
+              <CheckSquare className="size-5" />
+            ) : (
+              <Square className="size-5 opacity-80" />
+            )}
+          </button>
+        )}
         {listing.images.length > 1 && (
           <span className="absolute bottom-2 right-2 flex items-center gap-1 rounded bg-steel/85 px-1.5 py-0.5 text-[11px] text-steel-foreground">
             <Images className="size-3" /> {listing.images.length}
           </span>
         )}
-      </button>
+      </div>
 
       <div className="flex flex-1 flex-col gap-3 p-3.5">
         <div>
