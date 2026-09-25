@@ -36,6 +36,7 @@ with open(csv_file, 'r', encoding='utf-8') as f:
             images_saved = 0
             
         post_url = row.get('post_url', '')
+        caption = clean_value(row.get('caption', ''))
 
         # Construct image array with img_01.jpg format
         images = []
@@ -55,6 +56,7 @@ with open(csv_file, 'r', encoding='utf-8') as f:
             "fuel": fuel,
             "displacement": displacement,
             "models": [],
+            "caption": caption,
             "images": images,
             "whatsapp": "971-508-997-740",
             "postUrl": post_url
@@ -80,6 +82,9 @@ export interface Listing {{
   fuel: Fuel;
   displacement: string;
   models: string[];
+  /** Original sales-post text. Richest free-text field: often names the vehicle
+   * (TRITON, HILUX) and turbo/valve details absent from the structured columns. */
+  caption: string;
   images: string[];
   whatsapp: string;
   postUrl: string;

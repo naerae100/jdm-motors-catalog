@@ -10,6 +10,9 @@ export interface Listing {
   fuel: Fuel;
   displacement: string;
   models: string[];
+  /** Original sales-post text. Richest free-text field: often names the vehicle
+   * (TRITON, HILUX) and turbo/valve details absent from the structured columns. */
+  caption: string;
   images: string[];
   whatsapp: string;
   postUrl: string;
@@ -24,6 +27,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.3L",
     models: [],
+    caption: "TOYOTA 2NZ(1.3L), V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_2NZ_1.3L/img_01.jpg",
       "/images/inventory/Toyota_2NZ_1.3L/img_02.jpg",
@@ -43,6 +47,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MAZDA WL 2.5L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Mazda_WL_2.5L/img_01.jpg",
       "/images/inventory/Mazda_WL_2.5L/img_02.jpg",
@@ -62,6 +67,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.3L",
     models: [],
+    caption: "FORD E5FB \u2013 2.3L PETROL DOHC 16V ENGINE",
     images: [
       "/images/inventory/Ford_E5FB_2.3L/img_01.jpg",
       "/images/inventory/Ford_E5FB_2.3L/img_02.jpg",
@@ -81,6 +87,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.7L",
     models: [],
+    caption: "NISSAN TD27-TURBO 2.7L DIESEL ENGINE.",
     images: [
       "/images/inventory/Nissan_TD27-TURBO_2.7L/img_01.jpg",
       "/images/inventory/Nissan_TD27-TURBO_2.7L/img_02.jpg",
@@ -99,6 +106,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "NISSAN YD25-D40 2.5L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_YD25-D40_2.5L/img_01.jpg",
       "/images/inventory/Nissan_YD25-D40_2.5L/img_02.jpg",
@@ -118,6 +126,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.3L",
     models: [],
+    caption: "MAZDA L3 / MZR (2.3L) PETROL ENGINE (DOHC 16-VALVE)",
     images: [
       "/images/inventory/Mazda_L3_2.3L/img_01.jpg",
       "/images/inventory/Mazda_L3_2.3L/img_02.jpg",
@@ -137,6 +146,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.6L",
     models: [],
+    caption: "SUZUKI M16A 1.6 L GASOLINE ENGINE AVAILABLE",
     images: [
       "/images/inventory/Suzuki_M16A_1.6L/img_01.jpg",
       "/images/inventory/Suzuki_M16A_1.6L/img_02.jpg",
@@ -154,6 +164,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.0L",
     models: [],
+    caption: "NISSAN QR20 2.0L V4 GASOLINE ENGINE AVAILABLE",
     images: [
       "/images/inventory/Nissan_QR20_2.0L/img_01.jpg",
       "/images/inventory/Nissan_QR20_2.0L/img_02.jpg",
@@ -172,6 +183,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.0L",
     models: [],
+    caption: "SUZUKI J20A 2.0 L GASOLINE ENGINE AVAILABLE",
     images: [
       "/images/inventory/Suzuki_J20A_2.0L/img_01.jpg",
       "/images/inventory/Suzuki_J20A_2.0L/img_02.jpg",
@@ -190,6 +202,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.0L",
     models: [],
+    caption: "HYUNDAI G3LA 1.0 L GASOLINE ENGINE",
     images: [
       "/images/inventory/Hyundai_G3LA_1.0L/img_01.jpg",
       "/images/inventory/Hyundai_G3LA_1.0L/img_02.jpg",
@@ -208,6 +221,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MITSUBISHI TRITON 4D56-U(CRDi)2.5L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Mitsubishi_4D56-U_2.5L/img_01.jpg",
       "/images/inventory/Mitsubishi_4D56-U_2.5L/img_02.jpg",
@@ -225,6 +239,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 1KZ 3.0L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_1KZ_3.0L/img_01.jpg",
       "/images/inventory/Toyota_1KZ_3.0L/img_02.jpg",
@@ -242,6 +257,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.4L",
     models: [],
+    caption: "MITSUBISHI 4N15 2.4L DIESEL ENGINE",
     images: [
       "/images/inventory/Mitsubishi_4N15_2.4L/img_01.jpg",
       "/images/inventory/Mitsubishi_4N15_2.4L/img_02.jpg",
@@ -259,6 +275,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.2L",
     models: [],
+    caption: "FORD RANGER P5AT 3.2L DIESEL ENGINE",
     images: [
       "/images/inventory/Ford_P5AT_3.2L/img_01.jpg",
       "/images/inventory/Ford_P5AT_3.2L/img_02.jpg",
@@ -277,6 +294,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MAZDA WL 2.5L V4 DIESEL ENGINE AVAILABLE",
     images: [
       "/images/inventory/Mazda_WL_2.5L__2/img_01.jpg",
       "/images/inventory/Mazda_WL_2.5L__2/img_02.jpg",
@@ -294,6 +312,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "ISUZU 4JJ3 AT- DMAX \u2013 3.0 L DIESEL ENGINE.",
     images: [
       "/images/inventory/Isuzu_4JJ3_3.0L/img_01.jpg",
       "/images/inventory/Isuzu_4JJ3_3.0L/img_02.jpg",
@@ -311,6 +330,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.5L",
     models: [],
+    caption: "NISSAN QG15 1.5L V 4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Nissan_QG15_1.5L/img_01.jpg",
       "/images/inventory/Nissan_QG15_1.5L/img_02.jpg",
@@ -327,6 +347,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.5L",
     models: [],
+    caption: "NISSAN GA15 1.5L V 4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Nissan_GA15_1.5L/img_01.jpg",
       "/images/inventory/Nissan_GA15_1.5L/img_02.jpg",
@@ -343,6 +364,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 1KD 3.0L V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Toyota_1KD_3.0L/img_01.jpg",
       "/images/inventory/Toyota_1KD_3.0L/img_02.jpg",
@@ -360,6 +382,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.4L",
     models: [],
+    caption: "TOYOTA 22R 2.4L V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_22R_2.4L/img_01.jpg",
       "/images/inventory/Toyota_22R_2.4L/img_02.jpg",
@@ -377,6 +400,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.2L",
     models: [],
+    caption: "NISSAN QD32-TURBO  3.2L MANUAL PUMP V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Nissan_QD32-TURBO_3.2L/img_01.jpg",
       "/images/inventory/Nissan_QD32-TURBO_3.2L/img_02.jpg",
@@ -394,6 +418,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 2GR/3GR 3.5/3.0 L GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_2GR_3.0L/img_01.jpg",
       "/images/inventory/Toyota_2GR_3.0L/img_02.jpg",
@@ -411,6 +436,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.6L",
     models: [],
+    caption: "NISSAN GA16 1.6 L GASOLINE ENGINE",
     images: [
       "/images/inventory/Nissan_GA16_1.6L/img_01.jpg",
       "/images/inventory/Nissan_GA16_1.6L/img_02.jpg",
@@ -428,6 +454,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.0L",
     models: [],
+    caption: "MAZDA RF6 2.0L COMMON RAIL DIESEL ENGINE AVAILABLE",
     images: [
       "/images/inventory/Mazda_RF6_2.0L/img_01.jpg",
       "/images/inventory/Mazda_RF6_2.0L/img_02.jpg",
@@ -446,6 +473,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.0L",
     models: [],
+    caption: "NISSAN MR20 2.0L V4 GASOLINE ENGINE AVAILABLE",
     images: [
       "/images/inventory/Nissan_MR20_2.0L/img_01.jpg",
       "/images/inventory/Nissan_MR20_2.0L/img_02.jpg",
@@ -464,6 +492,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.2L",
     models: [],
+    caption: "HYUNDAI D4ED 2.2 L DIESEL ENGINE.",
     images: [
       "/images/inventory/Hyundai_D4ED_2.2L/img_01.jpg",
       "/images/inventory/Hyundai_D4ED_2.2L/img_02.jpg",
@@ -481,6 +510,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.5L",
     models: [],
+    caption: "Toyota 1NZ(1.5L) & 2NZ(1.3L), V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_1NZ_1.5L/img_01.jpg",
       "/images/inventory/Toyota_1NZ_1.5L/img_02.jpg",
@@ -500,6 +530,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MITSUBISHI TRITON 4D56-U(CRDi)2.5L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Mitsubishi_4D56-U_2.5L__2/img_01.jpg",
       "/images/inventory/Mitsubishi_4D56-U_2.5L__2/img_02.jpg",
@@ -518,6 +549,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "3.0L",
     models: [],
+    caption: "MITSUBISHI  6G72 3.0L V6 GASOLINE ENGINE",
     images: [
       "/images/inventory/Mitsubishi_6G72_3.0L/img_01.jpg",
       "/images/inventory/Mitsubishi_6G72_3.0L/img_02.jpg",
@@ -536,6 +568,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.0L",
     models: [],
+    caption: "NISSAN QR25 2.0L/2.5L V4 GASOLINE ENGINE AVAILABLE",
     images: [
       "/images/inventory/Nissan_QR25_2.0L/img_01.jpg",
       "/images/inventory/Nissan_QR25_2.0L/img_02.jpg",
@@ -554,6 +587,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.4L",
     models: [],
+    caption: "HYUNDAI G4KG 2.4L GASOLINE ENGINE",
     images: [
       "/images/inventory/Hyundai_G4KG_2.4L/img_01.jpg",
       "/images/inventory/Hyundai_G4KG_2.4L/img_02.jpg",
@@ -573,6 +607,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "HYUNDAI \u2013 D4BB 2.5L V4 TURBO AND NON-TURBO DIESEL ENGINE",
     images: [
       "/images/inventory/Hyundai_D4BB_2.5L/img_01.jpg",
       "/images/inventory/Hyundai_D4BB_2.5L/img_02.jpg",
@@ -592,6 +627,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "NISSAN YD25 2.5L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_YD25_2.5L/img_01.jpg",
       "/images/inventory/Nissan_YD25_2.5L/img_02.jpg",
@@ -611,6 +647,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.7L",
     models: [],
+    caption: "NISSAN TD27-TURBO 2.7L DIESEL ENGINE.",
     images: [
       "/images/inventory/Nissan_TD27-TURBO_2.7L__2/img_01.jpg",
       "/images/inventory/Nissan_TD27-TURBO_2.7L__2/img_02.jpg",
@@ -630,6 +667,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 5L 3.0L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_5L_3.0L/img_01.jpg",
       "/images/inventory/Toyota_5L_3.0L/img_02.jpg",
@@ -648,6 +686,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.8L",
     models: [],
+    caption: "TOYOTA 3L 2.8 L DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_3L_2.8L/img_01.jpg",
       "/images/inventory/Toyota_3L_2.8L/img_02.jpg",
@@ -667,6 +706,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.0L",
     models: [],
+    caption: "HYUNDAI D4HA (2.0L)  / D4HB (2.2L) TURBO CHARGED DIESEL ENGINE.",
     images: [
       "/images/inventory/Hyundai_D4HA_2.0L/img_01.jpg",
       "/images/inventory/Hyundai_D4HA_2.0L/img_02.jpg",
@@ -685,6 +725,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "NISSAN ZD30 3.0L DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_ZD30_3.0L/img_01.jpg",
       "/images/inventory/Nissan_ZD30_3.0L/img_02.jpg",
@@ -704,6 +745,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "TOYOTA 2KD ( 2.5L ) V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Toyota_2KD_2.5L/img_01.jpg",
       "/images/inventory/Toyota_2KD_2.5L/img_02.jpg",
@@ -722,6 +764,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.8L",
     models: [],
+    caption: "ISUZU 4JB1 2.8L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Isuzu_4JB1_2.8L/img_01.jpg",
       "/images/inventory/Isuzu_4JB1_2.8L/img_02.jpg",
@@ -740,6 +783,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "ISUZU 4JJ1 TURBO INTER COOLER - DMAX \u2013 3.0 L DIESEL ENGINE.",
     images: [
       "/images/inventory/Isuzu_4JJ1_3.0L/img_01.jpg",
       "/images/inventory/Isuzu_4JJ1_3.0L/img_02.jpg",
@@ -759,6 +803,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.7L",
     models: [],
+    caption: "KIA J2(2.7L) KIA JT(3.0L) V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Kia_J2_2.7L/img_01.jpg",
       "/images/inventory/Kia_J2_2.7L/img_02.jpg",
@@ -778,6 +823,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 1KZ 3.0L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_1KZ_3.0L__2/img_01.jpg",
       "/images/inventory/Toyota_1KZ_3.0L__2/img_02.jpg",
@@ -797,6 +843,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.9L",
     models: [],
+    caption: "MAZDA W9 2.9L DIESEL ENGINE AVAILABLE",
     images: [
       "/images/inventory/Mazda_W9_2.9L/img_01.jpg",
       "/images/inventory/Mazda_W9_2.9L/img_02.jpg",
@@ -816,6 +863,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MITSUBISHI 4D56-TURBO 2.5L V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Mitsubishi_4D56-TURBO_2.5L/img_01.jpg",
       "/images/inventory/Mitsubishi_4D56-TURBO_2.5L/img_02.jpg",
@@ -835,6 +883,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.8L",
     models: [],
+    caption: "MITSUBISHI 4M40 (2.8L ) In-line 4 Cylinder turbo charged diesel engine.",
     images: [
       "/images/inventory/Mitsubishi_4M40_2.8L/img_01.jpg",
       "/images/inventory/Mitsubishi_4M40_2.8L/img_02.jpg",
@@ -854,6 +903,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MAZDA WL 2.5L V4 DIESEL ENGINE AVAILABLE",
     images: [
       "/images/inventory/Mazda_WL_2.5L__3/img_01.jpg",
       "/images/inventory/Mazda_WL_2.5L__3/img_02.jpg",
@@ -873,6 +923,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 1KD 3.0L V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Toyota_1KD_3.0L__2/img_01.jpg",
       "/images/inventory/Toyota_1KD_3.0L__2/img_02.jpg",
@@ -892,6 +943,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "MAZDA WE 3.0L V4 DIESEL ENGINE AVAILABLE",
     images: [
       "/images/inventory/Mazda_WE_3.0L/img_01.jpg",
       "/images/inventory/Mazda_WE_3.0L/img_02.jpg",
@@ -911,6 +963,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.4L",
     models: [],
+    caption: "FORD H9FA 2.4 L DIESEL ENGINE",
     images: [
       "/images/inventory/Ford_H9FA_2.4L/img_01.jpg",
       "/images/inventory/Ford_H9FA_2.4L/img_02.jpg",
@@ -929,6 +982,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "NISSAN BD30 3.0 L 4-CYLINDER DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_BD30_3.0L/img_01.jpg",
       "/images/inventory/Nissan_BD30_3.0L/img_02.jpg",
@@ -946,6 +1000,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.6L",
     models: [],
+    caption: "SUZUKI M16A 1.6 L GASOLINE ENGINE AVAILABLE",
     images: [
       "/images/inventory/Suzuki_M16A_1.6L__2/img_01.jpg",
       "/images/inventory/Suzuki_M16A_1.6L__2/img_02.jpg",
@@ -963,6 +1018,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "Mitsubishi 4M42 (3.0L) Inline 4-Cylinder Turbo charges Diesel engine.",
     images: [
       "/images/inventory/Mitsubishi_4M42_3.0L/img_01.jpg",
       "/images/inventory/Mitsubishi_4M42_3.0L/img_02.jpg",
@@ -982,6 +1038,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "MITSUBISHI FUSO 4P10 3.0 L DIESEL ENGINE",
     images: [
       "/images/inventory/Mitsubishi_4P10_3.0L/img_01.jpg",
       "/images/inventory/Mitsubishi_4P10_3.0L/img_02.jpg",
@@ -1001,6 +1058,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HYUNDAI TUCSON HALF CUT \u2013 D4HA ENGINE",
     images: [
       "/images/inventory/Hyundai_D4HA/img_01.jpg",
       "/images/inventory/Hyundai_D4HA/img_02.jpg",
@@ -1019,6 +1077,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "",
     models: [],
+    caption: "TOYOTA 1ZZ 1.8 V4 GASOLINE ENGINE AVAILABLE",
     images: [
       "/images/inventory/Toyota_1ZZ/img_01.jpg",
       "/images/inventory/Toyota_1ZZ/img_02.jpg",
@@ -1036,6 +1095,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.7L",
     models: [],
+    caption: "NISSAN TD27  -  2.7L  MANUAL PUMP V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Nissan_TD27_2.7L/img_01.jpg",
       "/images/inventory/Nissan_TD27_2.7L/img_02.jpg",
@@ -1053,6 +1113,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.8L",
     models: [],
+    caption: "CHEVROLET F18D4 1.8L GASOLINE ENGINE",
     images: [
       "/images/inventory/Chevrolet_F18D4_1.8L/img_01.jpg",
       "/images/inventory/Chevrolet_F18D4_1.8L/img_02.jpg",
@@ -1071,6 +1132,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "TOYOTA HILUX 1KD COMPLETE HALF CUT",
     images: [
       "/images/inventory/Toyota_1KD/img_01.jpg",
       "/images/inventory/Toyota_1KD/img_02.jpg",
@@ -1088,6 +1150,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.5L",
     models: [],
+    caption: "TOYOTA 3SZ 1.5 L V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_3SZ_1.5L/img_01.jpg",
       "/images/inventory/Toyota_3SZ_1.5L/img_02.jpg",
@@ -1106,6 +1169,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "COMPLETE HALF CUT HYUNDAI- H1",
     images: [
       "/images/inventory/Hyundai_H1/img_01.jpg",
       "/images/inventory/Hyundai_H1/img_02.jpg",
@@ -1124,6 +1188,8 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption:
+      "TOYOTA COROLLA 7A HALF CUT - (CABIN, ENGINE& TRANSMISSION, COMPLETE SET OF DOORS,FRONT AND REAR DIFFERENTIALS, COMPLETE SET OF SUSPENSIONS.)",
     images: [
       "/images/inventory/Toyota_7A/img_01.jpg",
       "/images/inventory/Toyota_7A/img_02.jpg",
@@ -1141,6 +1207,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.6L",
     models: [],
+    caption: "KIA FE 2.6L GASOLINE ENGINE",
     images: [
       "/images/inventory/Kia_6L_2.6L/img_01.jpg",
       "/images/inventory/Kia_6L_2.6L/img_02.jpg",
@@ -1159,6 +1226,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.0L",
     models: [],
+    caption: "HYUNDAI  G4GC  2.0L GASOLINE ENGINE",
     images: [
       "/images/inventory/Hyundai_G4GC_2.0L/img_01.jpg",
       "/images/inventory/Hyundai_G4GC_2.0L/img_02.jpg",
@@ -1177,6 +1245,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HYUNDAI TUCSON HALF CUT AND COMPLETE CAR",
     images: [
       "/images/inventory/Hyundai_HalfCut/img_01.jpg",
       "/images/inventory/Hyundai_HalfCut/img_02.jpg",
@@ -1195,6 +1264,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.8L",
     models: [],
+    caption: "TOYOTA 3L 2.8 L DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_3L_2.8L__2/img_01.jpg",
       "/images/inventory/Toyota_3L_2.8L__2/img_02.jpg",
@@ -1213,6 +1283,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.0L",
     models: [],
+    caption: "NISSAN NA20 2.0L GASOLINE ENGINE",
     images: [
       "/images/inventory/Nissan_NA20_2.0L/img_01.jpg",
       "/images/inventory/Nissan_NA20_2.0L/img_02.jpg",
@@ -1231,6 +1302,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MAZDA WL 2.5L V4 DIESEL ENGINE AVAILABLE \ud83c\udf89",
     images: [
       "/images/inventory/Mazda_WL_2.5L__4/img_01.jpg",
       "/images/inventory/Mazda_WL_2.5L__4/img_02.jpg",
@@ -1250,6 +1322,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HINO \u2013JO8C- COMPLETE HALF CUT & TRUCK",
     images: [
       "/images/inventory/Hino_JO8C/img_01.jpg",
       "/images/inventory/Hino_JO8C/img_02.jpg",
@@ -1267,6 +1340,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "GEAR BOX 4P10",
     images: [
       "/images/inventory/4P10/img_01.jpg",
       "/images/inventory/4P10/img_02.jpg",
@@ -1285,6 +1359,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.8L",
     models: [],
+    caption: "ISUZU 4JB1 2.8L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Isuzu_4JB1_2.8L__2/img_01.jpg",
       "/images/inventory/Isuzu_4JB1_2.8L__2/img_02.jpg",
@@ -1303,6 +1378,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 1KZ 3.0L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_1KZ_3.0L__3/img_01.jpg",
       "/images/inventory/Toyota_1KZ_3.0L__3/img_02.jpg",
@@ -1322,6 +1398,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.8L",
     models: [],
+    caption: "HYUNDAI G4NB 1.8 L GASOLINE ENGINE",
     images: [
       "/images/inventory/Hyundai_G4NB_1.8L/img_01.jpg",
       "/images/inventory/Hyundai_G4NB_1.8L/img_02.jpg",
@@ -1340,6 +1417,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 5L 3.0L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_5L_3.0L__2/img_01.jpg",
       "/images/inventory/Toyota_5L_3.0L__2/img_02.jpg",
@@ -1358,6 +1436,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.5L",
     models: [],
+    caption: "Toyota 1NZ(1.5L) & 2NZ(1.3L), V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_1NZ_1.5L__2/img_01.jpg",
       "/images/inventory/Toyota_1NZ_1.5L__2/img_02.jpg",
@@ -1377,6 +1456,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.4L",
     models: [],
+    caption: "TOYOTA 2RZ 2.4L GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_2RZ_2.4L/img_01.jpg",
       "/images/inventory/Toyota_2RZ_2.4L/img_02.jpg",
@@ -1396,6 +1476,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HALF CUT NISSAN PATHFINDER VQ40",
     images: [
       "/images/inventory/Nissan_VQ40/img_01.jpg",
       "/images/inventory/Nissan_VQ40/img_02.jpg",
@@ -1413,6 +1494,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.8L",
     models: [],
+    caption: "Toyota-3L, 2.8 L V4 Diesel Engine",
     images: [
       "/images/inventory/Toyota_3L_2.8L__3/img_01.jpg",
       "/images/inventory/Toyota_3L_2.8L__3/img_02.jpg",
@@ -1430,6 +1512,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HALF CUT TOYOTA HILUX 3L",
     images: [
       "/images/inventory/Toyota_3L/img_01.jpg",
       "/images/inventory/Toyota_3L/img_02.jpg",
@@ -1448,6 +1531,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "1.4L",
     models: [],
+    caption: "FORD F6JA 1.4L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Ford_F6JA_1.4L/img_01.jpg",
       "/images/inventory/Ford_F6JA_1.4L/img_02.jpg",
@@ -1466,6 +1550,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "COMPLETE TRUCK / HALF CUT MITSUBISHI FUSSO (6M60)",
     images: [
       "/images/inventory/Mitsubishi_6M60/img_01.jpg",
       "/images/inventory/Mitsubishi_6M60/img_02.jpg",
@@ -1485,6 +1570,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "HYUNDAI \u2013D4CB-TURBO 2.5L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Hyundai_D4CB-TURBO_2.5L/img_01.jpg",
       "/images/inventory/Hyundai_D4CB-TURBO_2.5L/img_02.jpg",
@@ -1502,6 +1588,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "NISSAN YD25 2.5L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_YD25_2.5L__2/img_01.jpg",
       "/images/inventory/Nissan_YD25_2.5L__2/img_02.jpg",
@@ -1520,6 +1607,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HALF CUT NISSAN NAVARA YD25 D40",
     images: [
       "/images/inventory/Nissan_YD25/img_01.jpg",
       "/images/inventory/Nissan_YD25/img_02.jpg",
@@ -1538,6 +1626,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HALF CUT HYUNDAI \u2013 H 1 (D4CB)",
     images: [
       "/images/inventory/Hyundai_D4CB/img_01.jpg",
       "/images/inventory/Hyundai_D4CB/img_02.jpg",
@@ -1555,6 +1644,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.0L",
     models: [],
+    caption: "NISAN MR20 2.0L V4 GASOLINE ENGINE AVAILABLE",
     images: [
       "/images/inventory/MR20_2.0L/img_01.jpg",
       "/images/inventory/MR20_2.0L/img_02.jpg",
@@ -1572,6 +1662,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.3L",
     models: [],
+    caption: "HYUNDAI \u2013D4AE-TURBO 3.3 L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Hyundai_D4AE-TURBO_3.3L/img_01.jpg",
       "/images/inventory/Hyundai_D4AE-TURBO_3.3L/img_02.jpg",
@@ -1589,6 +1680,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "NISSAN ZD30(3.0L) TURBO & NON TURBO V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_ZD30_3.0L__2/img_01.jpg",
       "/images/inventory/Nissan_ZD30_3.0L__2/img_02.jpg",
@@ -1607,6 +1699,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.8L",
     models: [],
+    caption: "MERCEDES BENZ/ SSANG YONG MUSSO (662920) 2.8L  GASOLINE ENGINE",
     images: [
       "/images/inventory/8L_2.8L/img_01.jpg",
       "/images/inventory/8L_2.8L/img_02.jpg",
@@ -1624,6 +1717,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "ISUZU  4JA1-T 2.5L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Isuzu_4JA1-T_2.5L/img_01.jpg",
       "/images/inventory/Isuzu_4JA1-T_2.5L/img_02.jpg",
@@ -1641,6 +1735,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.4L",
     models: [],
+    caption: "TOYOTA 3B 3.4L V4 DIESEL ENGINE -",
     images: [
       "/images/inventory/Toyota_3B_3.4L/img_01.jpg",
       "/images/inventory/Toyota_3B_3.4L/img_02.jpg",
@@ -1659,6 +1754,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "MAZDA WE 3.0L V4 DIESEL ENGINE AVAILABLE",
     images: [
       "/images/inventory/Mazda_WE_3.0L__2/img_01.jpg",
       "/images/inventory/Mazda_WE_3.0L__2/img_02.jpg",
@@ -1678,6 +1774,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "TOYOTA LANDCRUISER COMPLETE CAR, HALFCUTS & USED ENGINES",
     images: [
       "/images/inventory/Toyota_HalfCut/img_01.jpg",
       "/images/inventory/Toyota_HalfCut/img_02.jpg",
@@ -1696,6 +1793,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.4L",
     models: [],
+    caption: "TOYOTA 13B 3.4L DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_13B_3.4L/img_01.jpg",
       "/images/inventory/Toyota_13B_3.4L/img_02.jpg",
@@ -1713,6 +1811,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "MAZDA HA 3.0L DIESEL ENGINE",
     images: [
       "/images/inventory/Mazda_0L_3.0L/img_01.jpg",
       "/images/inventory/Mazda_0L_3.0L/img_02.jpg",
@@ -1731,6 +1830,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.0L",
     models: [],
+    caption: "NISSAN KA20 (2.0L) KA24 (2.4L) V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Nissan_KA20_2.0L/img_01.jpg",
       "/images/inventory/Nissan_KA20_2.0L/img_02.jpg",
@@ -1749,6 +1849,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.8L",
     models: [],
+    caption: "MITSUBISHI 4DR7 2.8 L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Mitsubishi_4DR7_2.8L/img_01.jpg",
       "/images/inventory/Mitsubishi_4DR7_2.8L/img_02.jpg",
@@ -1768,6 +1869,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.2L",
     models: [],
+    caption: "FORD RANGER P5AT 3.2L DIESEL ENGINE",
     images: [
       "/images/inventory/Ford_P5AT_3.2L__2/img_01.jpg",
       "/images/inventory/Ford_P5AT_3.2L__2/img_02.jpg",
@@ -1787,6 +1889,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.0L",
     models: [],
+    caption: "TOYOTA/LEXUS  1G 2.0L GASOLINE ENGINE AVAILABLE",
     images: [
       "/images/inventory/Toyota_1G_2.0L/img_01.jpg",
       "/images/inventory/Toyota_1G_2.0L/img_02.jpg",
@@ -1805,6 +1908,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.2L",
     models: [],
+    caption: "NISSAN YD22  2.2L  DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_YD22_2.2L/img_01.jpg",
       "/images/inventory/Nissan_YD22_2.2L/img_02.jpg",
@@ -1822,6 +1926,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "3.4L",
     models: [],
+    caption: "TOYOTA 5VZ 3.4L GASOLILNE ENGINE .",
     images: [
       "/images/inventory/Toyota_5VZ_3.4L/img_01.jpg",
       "/images/inventory/Toyota_5VZ_3.4L/img_02.jpg",
@@ -1841,6 +1946,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.0L",
     models: [],
+    caption: "MAZDA RF6 2.0L COMMON RAIL  DIESEL ENGINE AVAILABLE",
     images: [
       "/images/inventory/Mazda_RF6_2.0L__2/img_01.jpg",
       "/images/inventory/Mazda_RF6_2.0L__2/img_02.jpg",
@@ -1859,6 +1965,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.5L",
     models: [],
+    caption: "Nissan FD35 (3.5L) InLine-4 Non-Turbo and Turbo Charged Diesel Engine.",
     images: [
       "/images/inventory/Nissan_FD35_3.5L/img_01.jpg",
       "/images/inventory/Nissan_FD35_3.5L/img_02.jpg",
@@ -1878,6 +1985,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "",
     models: [],
+    caption: "ISUZU NPR- 4HF1- 4.33L DIESEL ENGINE",
     images: [
       "/images/inventory/Isuzu_4HF1/img_01.jpg",
       "/images/inventory/Isuzu_4HF1/img_02.jpg",
@@ -1896,6 +2004,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "4.8L",
     models: [],
+    caption: "TOYOTA SO5D 4.8L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_SO5D_4.8L/img_01.jpg",
       "/images/inventory/Toyota_SO5D_4.8L/img_02.jpg",
@@ -1914,6 +2023,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.6L",
     models: [],
+    caption: "SUZUKI M16A 1.6 L GASOLINE ENGINE AVAILABLE",
     images: [
       "/images/inventory/Suzuki_M16A_1.6L__3/img_01.jpg",
       "/images/inventory/Suzuki_M16A_1.6L__3/img_02.jpg",
@@ -1933,6 +2043,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.2L",
     models: [],
+    caption: "MAZDA R2 2.2L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Mazda_R2_2.2L/img_01.jpg",
       "/images/inventory/Mazda_R2_2.2L/img_02.jpg",
@@ -1951,6 +2062,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.6L",
     models: [],
+    caption: "NISSAN HR16 1.6L V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Nissan_HR16_1.6L/img_01.jpg",
       "/images/inventory/Nissan_HR16_1.6L/img_02.jpg",
@@ -1969,6 +2081,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.4L",
     models: [],
+    caption: "TOYOTA 22R 2.4L V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_22R_2.4L__2/img_01.jpg",
       "/images/inventory/Toyota_22R_2.4L__2/img_02.jpg",
@@ -1988,6 +2101,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "\u201cMERCEDES BENZ TRUCK HALF CUTS AND AUTO SPARE PARTS \u201c",
     images: [
       "/images/inventory/HalfCut/img_01.jpg",
       "/images/inventory/HalfCut/img_02.jpg",
@@ -2006,6 +2120,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.4L",
     models: [],
+    caption: "HYUNDAI G4KG 2.4L GASOLINE ENGINE",
     images: [
       "/images/inventory/Hyundai_G4KG_2.4L__2/img_01.jpg",
       "/images/inventory/Hyundai_G4KG_2.4L__2/img_02.jpg",
@@ -2023,6 +2138,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.3L",
     models: [],
+    caption: "NISSAN YS23 2.3 L DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_YS23_2.3L/img_01.jpg",
       "/images/inventory/Nissan_YS23_2.3L/img_02.jpg",
@@ -2041,6 +2157,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "4.0L",
     models: [],
+    caption: "HINO NO4C 4.0L V4 TURBO AND NON TURBO DIESEL ENGINE",
     images: [
       "/images/inventory/Hino_NO4C_4.0L/img_01.jpg",
       "/images/inventory/Hino_NO4C_4.0L/img_02.jpg",
@@ -2059,6 +2176,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.4L",
     models: [],
+    caption: "HYUNDAI G4EE 1.4L GASOLINE ENGINE",
     images: [
       "/images/inventory/Hyundai_G4EE_1.4L/img_01.jpg",
       "/images/inventory/Hyundai_G4EE_1.4L/img_02.jpg",
@@ -2077,6 +2195,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.4L",
     models: [],
+    caption: "MITSUBISHI 4G64 2.4L V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Mitsubishi_4G64_2.4L/img_01.jpg",
       "/images/inventory/Mitsubishi_4G64_2.4L/img_02.jpg",
@@ -2096,6 +2215,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "3.0L",
     models: [],
+    caption: "MITSUBISHI  6G72 3.0L V6 GASOLINE ENGINE",
     images: [
       "/images/inventory/Mitsubishi_6G72_3.0L__2/img_01.jpg",
       "/images/inventory/Mitsubishi_6G72_3.0L__2/img_02.jpg",
@@ -2114,6 +2234,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.8L",
     models: [],
+    caption: "MITSUBISHI 4M40 (2.8L ) In-line 4 Cylinder turbo charged diesel engine.",
     images: [
       "/images/inventory/Mitsubishi_4M40_2.8L__2/img_01.jpg",
       "/images/inventory/Mitsubishi_4M40_2.8L__2/img_02.jpg",
@@ -2133,6 +2254,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.2L",
     models: [],
+    caption: "ISUZU C22NE 2.2L V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Isuzu_C22NE_2.2L/img_01.jpg",
       "/images/inventory/Isuzu_C22NE_2.2L/img_02.jpg",
@@ -2151,6 +2273,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.8L",
     models: [],
+    caption: "Toyota-3L, 2.8 L V4 Diesel Engine",
     images: [
       "/images/inventory/Toyota_3L_2.8L__4/img_01.jpg",
       "/images/inventory/Toyota_3L_2.8L__4/img_02.jpg",
@@ -2169,6 +2292,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 1 KZ-TURBO 3.0L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_0L_3.0L/img_01.jpg",
       "/images/inventory/Toyota_0L_3.0L/img_02.jpg",
@@ -2188,6 +2312,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MITSUBISHI 4D56-TURBO 2.5L V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Mitsubishi_4D56-TURBO_2.5L__2/img_01.jpg",
       "/images/inventory/Mitsubishi_4D56-TURBO_2.5L__2/img_02.jpg",
@@ -2206,6 +2331,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 1KD 3.0L V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Toyota_1KD_3.0L__3/img_01.jpg",
       "/images/inventory/Toyota_1KD_3.0L__3/img_02.jpg",
@@ -2225,6 +2351,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "NISSAN YD25-D22   2.5L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_YD25-D22_2.5L/img_01.jpg",
       "/images/inventory/Nissan_YD25-D22_2.5L/img_02.jpg",
@@ -2243,6 +2370,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "NISSAN YD25 2.5L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_YD25_2.5L__3/img_01.jpg",
       "/images/inventory/Nissan_YD25_2.5L__3/img_02.jpg",
@@ -2261,6 +2389,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MAZDA WL-T  \u2013 2.5 L V4 DIESEL ENGINE-",
     images: [
       "/images/inventory/Mazda_2.5L/img_01.jpg",
       "/images/inventory/Mazda_2.5L/img_02.jpg",
@@ -2280,6 +2409,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "TOYOTA LANDCRUISER COMPLETE CAR & HALF CUTS",
     images: [
       "/images/inventory/Toyota_HalfCut__2/img_01.jpg",
       "/images/inventory/Toyota_HalfCut__2/img_02.jpg",
@@ -2297,6 +2427,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "HYUNDAI \u2013 D4BB 2.5L  V4 TURBO AND NON-TURBO DIESEL ENGINE",
     images: [
       "/images/inventory/Hyundai_D4BB_2.5L__2/img_01.jpg",
       "/images/inventory/Hyundai_D4BB_2.5L__2/img_02.jpg",
@@ -2314,6 +2445,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.6L",
     models: [],
+    caption: "NISSAN GA16 1.6 L GASOLINE ENGINE",
     images: [
       "/images/inventory/Nissan_GA16_1.6L__2/img_01.jpg",
       "/images/inventory/Nissan_GA16_1.6L__2/img_02.jpg",
@@ -2332,6 +2464,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "TOYOTA 2KD ( 2.5L ) V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Toyota_2KD_2.5L__2/img_01.jpg",
       "/images/inventory/Toyota_2KD_2.5L__2/img_02.jpg",
@@ -2350,6 +2483,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "4.5L",
     models: [],
+    caption: "Toyota-1VD SingleTurbo V8 Diesel Engine, 4.5L",
     images: [
       "/images/inventory/Toyota_1VD_4.5L/img_01.jpg",
       "/images/inventory/Toyota_1VD_4.5L/img_02.jpg",
@@ -2368,6 +2502,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 5L 3.0L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_5L_3.0L__3/img_01.jpg",
       "/images/inventory/Toyota_5L_3.0L__3/img_02.jpg",
@@ -2387,6 +2522,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.4L",
     models: [],
+    caption: "HYUNDAI G4KJ 2.4L 4 CYLINDER GASOLINE ENGINE",
     images: [
       "/images/inventory/Hyundai_G4KJ_2.4L/img_01.jpg",
       "/images/inventory/Hyundai_G4KJ_2.4L/img_02.jpg",
@@ -2406,6 +2542,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "3.5L",
     models: [],
+    caption: "FORD RANGER P5AT 3.5L ENGINE",
     images: [
       "/images/inventory/Ford_P5AT_3.5L/img_01.jpg",
       "/images/inventory/Ford_P5AT_3.5L/img_02.jpg",
@@ -2423,6 +2560,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.7L",
     models: [],
+    caption: "NISSAN TD27-TURBO 2.7L  MANUAL PUMP V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Nissan_TD27-TURBO_2.7L__3/img_01.jpg",
       "/images/inventory/Nissan_TD27-TURBO_2.7L__3/img_02.jpg",
@@ -2441,6 +2579,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "",
     models: [],
+    caption: "MITSUBISHI 4D34-4D33-4D32 DIESEL ENGINE",
     images: [
       "/images/inventory/Mitsubishi_4D34-4D33/img_01.jpg",
       "/images/inventory/Mitsubishi_4D34-4D33/img_02.jpg",
@@ -2460,6 +2599,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "NISSAN YD25 2.5L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_YD25_2.5L__4/img_01.jpg",
       "/images/inventory/Nissan_YD25_2.5L__4/img_02.jpg",
@@ -2479,6 +2619,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING \ud83d\ude9b\ud83d\ude9b\u26a1",
     images: [
       "/images/inventory/UNSORTED/img_01.jpg",
       "/images/inventory/UNSORTED/img_02.jpg",
@@ -2498,6 +2639,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 1KD 3.0L V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Toyota_1KD_3.0L__4/img_01.jpg",
       "/images/inventory/Toyota_1KD_3.0L__4/img_02.jpg",
@@ -2517,6 +2659,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.7L",
     models: [],
+    caption: "NISSAN TD27- 2.7L EFI & MANUAL PUMP V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Nissan_TD27_2.7L__2/img_01.jpg",
       "/images/inventory/Nissan_TD27_2.7L__2/img_02.jpg",
@@ -2536,6 +2679,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 5L 3.0L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_5L_3.0L__4/img_01.jpg",
       "/images/inventory/Toyota_5L_3.0L__4/img_02.jpg",
@@ -2555,6 +2699,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING \ud83d\ude9b\ud83d\ude9b\u26a1",
     images: [
       "/images/inventory/UNSORTED__2/img_01.jpg",
       "/images/inventory/UNSORTED__2/img_02.jpg",
@@ -2574,6 +2719,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "\u201cISUZU TRUCK HALF CUTS AND AUTO SPARE PARTS \u201c",
     images: [
       "/images/inventory/Isuzu_HalfCut/img_01.jpg",
       "/images/inventory/Isuzu_HalfCut/img_02.jpg",
@@ -2593,6 +2739,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "CARGANDO \ud83d\ude9b\ud83d\ude9b\u26a1",
     images: [
       "/images/inventory/UNSORTED__3/img_01.jpg",
       "/images/inventory/UNSORTED__3/img_02.jpg",
@@ -2612,6 +2759,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "",
     models: [],
+    caption: "ISUZU NPR- 4HF1- 4.33L DIESEL ENGINE",
     images: [
       "/images/inventory/Isuzu_4HF1__2/img_01.jpg",
       "/images/inventory/Isuzu_4HF1__2/img_02.jpg",
@@ -2630,6 +2778,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.2L",
     models: [],
+    caption: "HYUNDAI D4ED 2.2 L DIESEL ENGINE.",
     images: [
       "/images/inventory/Hyundai_D4ED_2.2L__2/img_01.jpg",
       "/images/inventory/Hyundai_D4ED_2.2L__2/img_02.jpg",
@@ -2648,6 +2797,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.8L",
     models: [],
+    caption: "HINO WO4C 3.8L DIESEL ENGINE",
     images: [
       "/images/inventory/Hino_WO4C_3.8L/img_01.jpg",
       "/images/inventory/Hino_WO4C_3.8L/img_02.jpg",
@@ -2665,6 +2815,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "NISSAN ZD30(3.0L) TURBO & NON TURBO V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_ZD30_3.0L__3/img_01.jpg",
       "/images/inventory/Nissan_ZD30_3.0L__3/img_02.jpg",
@@ -2683,6 +2834,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.1L",
     models: [],
+    caption: "ISUZU 4JG2  3.1L  V4 TURBO INTER COOLER DIESEL ENGINE",
     images: [
       "/images/inventory/Isuzu_4JG2_3.1L/img_01.jpg",
       "/images/inventory/Isuzu_4JG2_3.1L/img_02.jpg",
@@ -2702,6 +2854,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "ISUZU 4JH1  3.0L  V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Isuzu_4JH1_3.0L/img_01.jpg",
       "/images/inventory/Isuzu_4JH1_3.0L/img_02.jpg",
@@ -2720,6 +2873,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "MAZDA HA 3.0L DIESEL ENGINE",
     images: [
       "/images/inventory/Mazda_0L_3.0L__2/img_01.jpg",
       "/images/inventory/Mazda_0L_3.0L__2/img_02.jpg",
@@ -2737,6 +2891,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "TOYOTA LAND CRUISER COMPLETE HALFCUT",
     images: [
       "/images/inventory/Toyota_HalfCut__3/img_01.jpg",
       "/images/inventory/Toyota_HalfCut__3/img_02.jpg",
@@ -2756,6 +2911,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.7L",
     models: [],
+    caption: "KIA J2(2.7L) KIA JT(3.0L) V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Kia_J2_2.7L__2/img_01.jpg",
       "/images/inventory/Kia_J2_2.7L__2/img_02.jpg",
@@ -2775,6 +2931,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 1KD 3.0L V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Toyota_1KD_3.0L__5/img_01.jpg",
       "/images/inventory/Toyota_1KD_3.0L__5/img_02.jpg",
@@ -2792,6 +2949,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "4.0L",
     models: [],
+    caption: "NISSAN VQ40 4.0 L V6 GASOLINE ENGINE",
     images: [
       "/images/inventory/Nissan_VQ40_4.0L/img_01.jpg",
       "/images/inventory/Nissan_VQ40_4.0L/img_02.jpg",
@@ -2810,6 +2968,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.8L",
     models: [],
+    caption: "MERCEDES BENZ/ SSANG YONG MUSSO (662920) 2.8L  GASOLINE ENGINE .",
     images: [
       "/images/inventory/8L_2.8L__2/img_01.jpg",
       "/images/inventory/8L_2.8L__2/img_02.jpg",
@@ -2829,6 +2988,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.0L",
     models: [],
+    caption: "HYUNDAI G3LA 1.0 L GASOLINE ENGINE",
     images: [
       "/images/inventory/Hyundai_G3LA_1.0L__2/img_01.jpg",
       "/images/inventory/Hyundai_G3LA_1.0L__2/img_02.jpg",
@@ -2846,6 +3006,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HALF CUT MAZDA WL",
     images: [
       "/images/inventory/Mazda_WL/img_01.jpg",
       "/images/inventory/Mazda_WL/img_02.jpg",
@@ -2864,6 +3025,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.6L",
     models: [],
+    caption: "TOYOTA 4A 1.6L V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_4A_1.6L/img_01.jpg",
       "/images/inventory/Toyota_4A_1.6L/img_02.jpg",
@@ -2882,6 +3044,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.3L",
     models: [],
+    caption: "TOYOTA 1NR 1.3L GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_1NR_1.3L/img_01.jpg",
       "/images/inventory/Toyota_1NR_1.3L/img_02.jpg",
@@ -2900,6 +3063,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "NISSAN YD25 2.5L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_YD25_2.5L__5/img_01.jpg",
       "/images/inventory/Nissan_YD25_2.5L__5/img_02.jpg",
@@ -2919,6 +3083,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "MITSUBISHI FUSO 4P10 3.0 L DIESEL ENGINE",
     images: [
       "/images/inventory/Mitsubishi_4P10_3.0L__2/img_01.jpg",
       "/images/inventory/Mitsubishi_4P10_3.0L__2/img_02.jpg",
@@ -2938,6 +3103,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "2.2L",
     models: [],
+    caption: "FORD RANGER P4AT/P5AT 2.2L/3.5L ENGINE",
     images: [
       "/images/inventory/Ford_P4AT_2.2L/img_01.jpg",
       "/images/inventory/Ford_P4AT_2.2L/img_02.jpg",
@@ -2957,6 +3123,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.4L",
     models: [],
+    caption: "MITSUBISHI 4G64 2.4L V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Mitsubishi_4G64_2.4L__2/img_01.jpg",
       "/images/inventory/Mitsubishi_4G64_2.4L__2/img_02.jpg",
@@ -2976,6 +3143,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "Mitsubishi 4M42 (3.0L) Inline 4-Cylinder Turbo charges Diesel engine.",
     images: [
       "/images/inventory/Mitsubishi_4M42_3.0L__2/img_01.jpg",
       "/images/inventory/Mitsubishi_4M42_3.0L__2/img_02.jpg",
@@ -2993,6 +3161,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "4.0L",
     models: [],
+    caption: "NISSAN VQ40 4.0 L V6 GASOLINE ENGINE",
     images: [
       "/images/inventory/Nissan_VQ40_4.0L__2/img_01.jpg",
       "/images/inventory/Nissan_VQ40_4.0L__2/img_02.jpg",
@@ -3012,6 +3181,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.8L",
     models: [],
+    caption: "MERCEDES BENZ M 271 1.8 L GASOLINE ENGINE",
     images: [
       "/images/inventory/1.8L/img_01.jpg",
       "/images/inventory/1.8L/img_02.jpg",
@@ -3031,6 +3201,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "4.8L",
     models: [],
+    caption: "TOYOTA SO5D 4.8L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_SO5D_4.8L__2/img_01.jpg",
       "/images/inventory/Toyota_SO5D_4.8L__2/img_02.jpg",
@@ -3048,6 +3219,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 2GR/3GR 3.5/3.0 L GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_2GR_3.0L__2/img_01.jpg",
       "/images/inventory/Toyota_2GR_3.0L__2/img_02.jpg",
@@ -3067,6 +3239,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.8L",
     models: [],
+    caption: "BMW N42 & N46 1.8L V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/N42_1.8L/img_01.jpg",
       "/images/inventory/N42_1.8L/img_02.jpg",
@@ -3085,6 +3258,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "MAZDA WE 3.0L V4 DIESEL ENGINE AVAILABLE",
     images: [
       "/images/inventory/Mazda_WE_3.0L__3/img_01.jpg",
       "/images/inventory/Mazda_WE_3.0L__3/img_02.jpg",
@@ -3102,6 +3276,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "BMW N46 COMPLETE HALFCUTS",
     images: [
       "/images/inventory/N46/img_01.jpg",
       "/images/inventory/N46/img_02.jpg",
@@ -3119,6 +3294,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "TOYOTA HIACE 2RZ COMPLETE HALFCUTS",
     images: [
       "/images/inventory/Toyota_2RZ/img_01.jpg",
       "/images/inventory/Toyota_2RZ/img_02.jpg",
@@ -3137,6 +3313,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "TOYOTA COROLLA 1ZZ COMPLETE HALFCUTS",
     images: [
       "/images/inventory/Toyota_1ZZ__2/img_01.jpg",
       "/images/inventory/Toyota_1ZZ__2/img_02.jpg",
@@ -3156,6 +3333,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MITSUBISHI 4D56-TURBO /NON TURBO/INTERCOOLER  2.5L V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Mitsubishi_4D56-TURBO_2.5L__3/img_01.jpg",
       "/images/inventory/Mitsubishi_4D56-TURBO_2.5L__3/img_02.jpg",
@@ -3175,6 +3353,8 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption:
+      "MITSUBISHI L200-4D56 U COMPLETE HALFCUTS (FRONT CUT, ENGINE, TRANSMISSION, COMPLETE SET OF DOOR, FRONT AND REAR DIFFERENTIAL)",
     images: [
       "/images/inventory/Mitsubishi_L200-4D56/img_01.jpg",
       "/images/inventory/Mitsubishi_L200-4D56/img_02.jpg",
@@ -3194,6 +3374,8 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption:
+      "NISSAN NAVARA YD25 COMPLETE HALFCUTS (FRONT CUT, ENGINE, TRANSMISSION, COMPLETE SET OF DOOR, FRONT AND REAR DIFFERENTIAL)",
     images: [
       "/images/inventory/Nissan_YD25__2/img_01.jpg",
       "/images/inventory/Nissan_YD25__2/img_02.jpg",
@@ -3211,6 +3393,8 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption:
+      "TOYOTA PRADO 1KZ COMPLETE HALF CUTS (FRONT CUT, ENGINE, TRANSMISSION, COMPLETE SET OF DOOR, FRONT AND REAR DIFFERENTIAL)",
     images: [
       "/images/inventory/Toyota_1KZ/img_01.jpg",
       "/images/inventory/Toyota_1KZ/img_02.jpg",
@@ -3228,6 +3412,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "HYUNDAI \u2013 D4BB 2.5L  V4 TURBO AND NON-TURBO DIESEL ENGINE",
     images: [
       "/images/inventory/Hyundai_D4BB_2.5L__3/img_01.jpg",
       "/images/inventory/Hyundai_D4BB_2.5L__3/img_02.jpg",
@@ -3246,6 +3431,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MITSUBISHI 4D56-U 2.5L V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Mitsubishi_4D56-U_2.5L__3/img_01.jpg",
       "/images/inventory/Mitsubishi_4D56-U_2.5L__3/img_02.jpg",
@@ -3264,6 +3450,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.7L",
     models: [],
+    caption: "TOYOTA 2TR  2.7L / 1TR 2.0L - V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_2TR_2.7L/img_01.jpg",
       "/images/inventory/Toyota_2TR_2.7L/img_02.jpg",
@@ -3282,6 +3469,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MAZDA WL \u2013 2.5 L V4 DIESEL ENGINE-",
     images: [
       "/images/inventory/Mazda_WL_2.5L__5/img_01.jpg",
       "/images/inventory/Mazda_WL_2.5L__5/img_02.jpg",
@@ -3301,6 +3489,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "ISUZU  4JA1-T 2.5L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Isuzu_4JA1-T_2.5L__2/img_01.jpg",
       "/images/inventory/Isuzu_4JA1-T_2.5L__2/img_02.jpg",
@@ -3319,6 +3508,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.8L",
     models: [],
+    caption: "MITSUBISHI 4M40 (2.8L ) In-line 4 Cylinder turbo charged diesel engine...",
     images: [
       "/images/inventory/Mitsubishi_4M40_2.8L__3/img_01.jpg",
       "/images/inventory/Mitsubishi_4M40_2.8L__3/img_02.jpg",
@@ -3338,6 +3528,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.7L",
     models: [],
+    caption: "KIA J2(2.7L) KIA JT(3.0L) V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Kia_J2_2.7L__3/img_01.jpg",
       "/images/inventory/Kia_J2_2.7L__3/img_02.jpg",
@@ -3355,6 +3546,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "NISSAN YD25 2.5L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_YD25_2.5L__6/img_01.jpg",
       "/images/inventory/Nissan_YD25_2.5L__6/img_02.jpg",
@@ -3374,6 +3566,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "4.0L",
     models: [],
+    caption: "Toyota 1UZ(4.0L) VVTI and NON-VVTI, V8 GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_1UZ_4.0L/img_01.jpg",
       "/images/inventory/Toyota_1UZ_4.0L/img_02.jpg",
@@ -3392,6 +3585,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "NISSAN ZD30(3.0L) TURBO & NON TURBO V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_ZD30_3.0L__4/img_01.jpg",
       "/images/inventory/Nissan_ZD30_3.0L__4/img_02.jpg",
@@ -3409,6 +3603,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.2L",
     models: [],
+    caption: "MAZDA R2 2.2L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Mazda_R2_2.2L__2/img_01.jpg",
       "/images/inventory/Mazda_R2_2.2L__2/img_02.jpg",
@@ -3428,6 +3623,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.5L",
     models: [],
+    caption: "Toyota 1NZ(1.5L) & 2NZ(1.3L), V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_1NZ_1.5L__3/img_01.jpg",
       "/images/inventory/Toyota_1NZ_1.5L__3/img_02.jpg",
@@ -3447,6 +3643,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 5L 3.0L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_5L_3.0L__5/img_01.jpg",
       "/images/inventory/Toyota_5L_3.0L__5/img_02.jpg",
@@ -3464,6 +3661,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.2L",
     models: [],
+    caption: "NISSAN QD32-TURBO  3.2L MANUAL PUMP V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Nissan_QD32-TURBO_3.2L__2/img_01.jpg",
       "/images/inventory/Nissan_QD32-TURBO_3.2L__2/img_02.jpg",
@@ -3482,6 +3680,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 1 KZ-TURBO 3.0L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_0L_3.0L__2/img_01.jpg",
       "/images/inventory/Toyota_0L_3.0L__2/img_02.jpg",
@@ -3500,6 +3699,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 1KD (3.0L ) / 2KD ( 2.5L ) V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Toyota_1KD_3.0L__6/img_01.jpg",
       "/images/inventory/Toyota_1KD_3.0L__6/img_02.jpg",
@@ -3517,6 +3717,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "\u00bfBUSCAS PIEZAS DE VEH\u00cdCULOS USADOS DE ALTA CALIDAD...?",
     images: ["/images/inventory/UNSORTED__4/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -3530,6 +3731,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOOKING FOR TOP QUALITY USED VEHICLE PARTS...?",
     images: ["/images/inventory/UNSORTED__5/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -3543,6 +3745,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.5L",
     models: [],
+    caption: "Nissan FD35 (3.5L) InLine-4 Non-Turbo and Turbo Charged Diesel Engine.",
     images: [
       "/images/inventory/Nissan_FD35_3.5L__2/img_01.jpg",
       "/images/inventory/Nissan_FD35_3.5L__2/img_02.jpg",
@@ -3561,6 +3764,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "2.4L",
     models: [],
+    caption: "TOYOTA  2L NON-Turbo 2.4L ENGINE",
     images: [
       "/images/inventory/Toyota_2L_2.4L/img_01.jpg",
       "/images/inventory/Toyota_2L_2.4L/img_02.jpg",
@@ -3579,6 +3783,8 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption:
+      "\u201cCOMPLETE HALF CUTS\u201d - (CABIN, ENGINE& TRANSMISSION, COMPLETE SET OF DOORS,FRONT AND REAR DIFFERENTIALS, COMPLETE SET OF SUSPENSIONS.)",
     images: [
       "/images/inventory/HalfCut__2/img_01.jpg",
       "/images/inventory/HalfCut__2/img_02.jpg",
@@ -3598,6 +3804,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "Mitsubishi 4M42 (3.0L) Inline 4-Cylinder Turbo charges Diesel engine.",
     images: [
       "/images/inventory/Mitsubishi_4M42_3.0L__3/img_01.jpg",
       "/images/inventory/Mitsubishi_4M42_3.0L__3/img_02.jpg",
@@ -3616,6 +3823,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.2L",
     models: [],
+    caption: "NISSAN HR12 1.2L V4 TURBO CHARGED GASOLINE ENGINE",
     images: [
       "/images/inventory/Nissan_HR12_1.2L/img_01.jpg",
       "/images/inventory/Nissan_HR12_1.2L/img_02.jpg",
@@ -3635,6 +3843,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.7L",
     models: [],
+    caption: "NISSAN TD27-TURBO & NON TURBO  2.7L EFI & MANUAL PUMP V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Nissan_TD27-TURBO_2.7L__4/img_01.jpg",
       "/images/inventory/Nissan_TD27-TURBO_2.7L__4/img_02.jpg",
@@ -3654,6 +3863,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HALF CUT NISSAN HARD BODY QD32 \u2013 PICK UP",
     images: [
       "/images/inventory/Nissan_QD32/img_01.jpg",
       "/images/inventory/Nissan_QD32/img_02.jpg",
@@ -3671,6 +3881,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "TOYOTA LAND CRUISER COMPLETE HALF CUT",
     images: ["/images/inventory/Toyota_HalfCut__4/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -3684,6 +3895,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.8L",
     models: [],
+    caption: "ISUZU 4JB1 2.8L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Isuzu_4JB1_2.8L__3/img_01.jpg",
       "/images/inventory/Isuzu_4JB1_2.8L__3/img_02.jpg",
@@ -3702,6 +3914,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "4.5L",
     models: [],
+    caption: "Toyota-1VD Twin Turbo & SingleTurbo V8 Diesel Engine, 4.5L",
     images: [
       "/images/inventory/Toyota_1VD_4.5L__2/img_01.jpg",
       "/images/inventory/Toyota_1VD_4.5L__2/img_02.jpg",
@@ -3718,6 +3931,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "TOYOTA LANDCRUISER PICK UP COMPLETE HALF CUT",
     images: [
       "/images/inventory/Toyota_HalfCut__5/img_01.jpg",
       "/images/inventory/Toyota_HalfCut__5/img_02.jpg",
@@ -3734,6 +3948,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.8L",
     models: [],
+    caption: "NISSAN QG18 1.8L / QG15 1.5L V 4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Nissan_QG18_1.8L/img_01.jpg",
       "/images/inventory/Nissan_QG18_1.8L/img_02.jpg",
@@ -3753,6 +3968,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "TOP QUALITY GEARBOXES @ BEST PRICES AVAILABLE IN THE MARKET",
     images: [
       "/images/inventory/Gearbox/img_01.jpg",
       "/images/inventory/Gearbox/img_02.jpg",
@@ -3772,6 +3988,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "\u201cCOMPLETE HALF CUTS AND CARS\u201d \u2013",
     images: [
       "/images/inventory/HalfCut__3/img_01.jpg",
       "/images/inventory/HalfCut__3/img_02.jpg",
@@ -3791,6 +4008,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "ISUZU 4HG1 ALUMINIUM AND STEEL GEARBOXES",
     images: [
       "/images/inventory/Isuzu_4HG1/img_01.jpg",
       "/images/inventory/Isuzu_4HG1/img_02.jpg",
@@ -3810,6 +4028,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.5L",
     models: [],
+    caption: "Toyota 1NZ(1.5L) & 2NZ(1.3L), V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_1NZ_1.5L__4/img_01.jpg",
       "/images/inventory/Toyota_1NZ_1.5L__4/img_02.jpg",
@@ -3828,6 +4047,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "NISSAN ZD30(3.0L) TURBO & NON TURBO V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_ZD30_3.0L__5/img_01.jpg",
       "/images/inventory/Nissan_ZD30_3.0L__5/img_02.jpg",
@@ -3847,6 +4067,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.0L",
     models: [],
+    caption: "NISSAN KA20 (2.0L) KA24 (2.4L) V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Nissan_KA20_2.0L__2/img_01.jpg",
       "/images/inventory/Nissan_KA20_2.0L__2/img_02.jpg",
@@ -3866,6 +4087,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "4.0L",
     models: [],
+    caption: "HINO NO4C 4.0L V4 TURBO AND NON TURBO DIESEL ENGINE",
     images: [
       "/images/inventory/Hino_NO4C_4.0L__2/img_01.jpg",
       "/images/inventory/Hino_NO4C_4.0L__2/img_02.jpg",
@@ -3884,6 +4106,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "MAZDA WE 3.0L / WL 2.5L 12V/16V V4 DIESEL ENGINE AVAILABLE",
     images: [
       "/images/inventory/Mazda_WE_3.0L__4/img_01.jpg",
       "/images/inventory/Mazda_WE_3.0L__4/img_02.jpg",
@@ -3903,6 +4126,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "1.8L",
     models: [],
+    caption: "AUDI BFB 1.8L V4 TURBO CHARGED GASOLINE ENGINE.",
     images: [
       "/images/inventory/8L_1.8L/img_01.jpg",
       "/images/inventory/8L_1.8L/img_02.jpg",
@@ -3920,6 +4144,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.7L",
     models: [],
+    caption: "KIA J2(2.7L) KIA JT(3.0L) V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Kia_J2_2.7L__4/img_01.jpg",
       "/images/inventory/Kia_J2_2.7L__4/img_02.jpg",
@@ -3939,6 +4164,8 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption:
+      "WE HAVE ALL TYPES OF USED EUROPEAN HALF CUTS, ENGINES, TRANSMISSION AND USED AUTO PARTS",
     images: [
       "/images/inventory/WE/img_01.jpg",
       "/images/inventory/WE/img_02.jpg",
@@ -3958,6 +4185,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "4.2L",
     models: [],
+    caption: "TOYOTA-1HD TURBO (12 VALVE) V6 4.2 L DIESEL ENGINE",
     images: [
       "/images/inventory/Toyota_1HD_4.2L/img_01.jpg",
       "/images/inventory/Toyota_1HD_4.2L/img_02.jpg",
@@ -3975,6 +4203,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.9L",
     models: [],
+    caption: "ISUZU 4BD2  TURBO 3.9L  V4  DIESEL ENGINE",
     images: [
       "/images/inventory/Isuzu_4BD2_3.9L/img_01.jpg",
       "/images/inventory/Isuzu_4BD2_3.9L/img_02.jpg",
@@ -3993,6 +4222,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "TOYOTA HILUX HALF-CUTS:",
     images: [
       "/images/inventory/Toyota/img_01.jpg",
       "/images/inventory/Toyota/img_02.jpg",
@@ -4011,6 +4241,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MITSUBISHI 4D56 2.5L V4 NON TURBO AND TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Mitsubishi_4D56_2.5L/img_01.jpg",
       "/images/inventory/Mitsubishi_4D56_2.5L/img_02.jpg",
@@ -4029,6 +4260,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MITSUBISHI 4D56-U  2.5L V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Mitsubishi_4D56-U_2.5L__4/img_01.jpg",
       "/images/inventory/Mitsubishi_4D56-U_2.5L__4/img_02.jpg",
@@ -4047,6 +4279,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "HYUNDAI \u2013D4CB-TURBO 2.5L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Hyundai_D4CB-TURBO_2.5L__2/img_01.jpg",
       "/images/inventory/Hyundai_D4CB-TURBO_2.5L__2/img_02.jpg",
@@ -4064,6 +4297,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.0L",
     models: [],
+    caption: "HYUNDAI D4HA (2.0L)  / D4HB (2.2L) TURBO CHARGED DIESEL ENGINE.",
     images: [
       "/images/inventory/Hyundai_D4HA_2.0L__2/img_01.jpg",
       "/images/inventory/Hyundai_D4HA_2.0L__2/img_02.jpg",
@@ -4082,6 +4316,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "4.2L",
     models: [],
+    caption: "NISSAN TD42 TURBO AND NON TURBO 4.2L V6 DIESEL ENGINE.",
     images: [
       "/images/inventory/Nissan_TD42_4.2L/img_01.jpg",
       "/images/inventory/Nissan_TD42_4.2L/img_02.jpg",
@@ -4100,6 +4335,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.4L",
     models: [],
+    caption: "Toyota-2L NON TURBO  2.4 L V4 Diesel Engine",
     images: [
       "/images/inventory/Toyota_2L_2.4L__2/img_01.jpg",
       "/images/inventory/Toyota_2L_2.4L__2/img_02.jpg",
@@ -4117,6 +4353,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.4L",
     models: [],
+    caption: "Toyota-2L/2L TURBO  2.4 L V4 Diesel Engine",
     images: [
       "/images/inventory/Toyota_2L_2.4L__3/img_01.jpg",
       "/images/inventory/Toyota_2L_2.4L__3/img_02.jpg",
@@ -4134,6 +4371,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.4L",
     models: [],
+    caption: "Toyota-2L/2L TURBO  2.4 L V4 Diesel Engine",
     images: ["/images/inventory/Toyota_2L_2.4L__4/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl: "https://www.facebook.com/reel/727527202869049/",
@@ -4146,6 +4384,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.8L",
     models: [],
+    caption: "Toyota-3L, 2.8 L V4 Diesel Engine",
     images: ["/images/inventory/Toyota_3L_2.8L__5/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4159,6 +4398,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "TOYOTA LANDCRUISER COMPLETE CARS & HALF-CUTS:",
     images: [
       "/images/inventory/Toyota_CompleteCar/img_01.jpg",
       "/images/inventory/Toyota_CompleteCar/img_02.jpg",
@@ -4177,6 +4417,7 @@ export const listings: Listing[] = [
     fuel: "Petrol",
     displacement: "2.7L",
     models: [],
+    caption: "TOYOTA 2TR  2.7L / 1TR 2.0L - V4 GASOLINE ENGINE",
     images: [
       "/images/inventory/Toyota_2TR_2.7L__2/img_01.jpg",
       "/images/inventory/Toyota_2TR_2.7L__2/img_02.jpg",
@@ -4196,6 +4437,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HALF CUT VOLKSWAGEN AMAROK",
     images: [
       "/images/inventory/HalfCut__4/img_01.jpg",
       "/images/inventory/HalfCut__4/img_02.jpg",
@@ -4214,6 +4456,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HALF CUT MITSUBISHI TRITON - 4D56 HALF CUTS",
     images: [
       "/images/inventory/Mitsubishi_4D56/img_01.jpg",
       "/images/inventory/Mitsubishi_4D56/img_02.jpg",
@@ -4231,6 +4474,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HALF CUT NISSAN NAVARA YD25",
     images: [
       "/images/inventory/Nissan_YD25__3/img_01.jpg",
       "/images/inventory/Nissan_YD25__3/img_02.jpg",
@@ -4248,6 +4492,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "TOYOTA LANDCRUISER COMPLETE CARS & HALF-CUTS:",
     images: [
       "/images/inventory/Toyota_CompleteCar__2/img_01.jpg",
       "/images/inventory/Toyota_CompleteCar__2/img_02.jpg",
@@ -4266,6 +4511,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "ISUZU  4JA1-T 2.5L V4 DIESEL ENGINE",
     images: [
       "/images/inventory/Isuzu_4JA1-T_2.5L__3/img_01.jpg",
       "/images/inventory/Isuzu_4JA1-T_2.5L__3/img_02.jpg",
@@ -4283,6 +4529,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "",
     models: [],
+    caption: "ISUZU NPR (4HF1- 4.33L) DIESEL ENGINE",
     images: [
       "/images/inventory/Isuzu_4HF1__3/img_01.jpg",
       "/images/inventory/Isuzu_4HF1__3/img_02.jpg",
@@ -4301,6 +4548,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.7L",
     models: [],
+    caption: "NISSAN TD27-TURBO & NON TURBO  2.7L EFI & MANUAL PUMP V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Nissan_TD27-TURBO_2.7L__5/img_01.jpg",
       "/images/inventory/Nissan_TD27-TURBO_2.7L__5/img_02.jpg",
@@ -4319,6 +4567,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.7L",
     models: [],
+    caption: "NISSAN TD27-TURBO & NON TURBO  2.7L EFI & MANUAL PUMP V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Nissan_TD27-TURBO_2.7L__6/img_01.jpg",
       "/images/inventory/Nissan_TD27-TURBO_2.7L__6/img_02.jpg",
@@ -4335,6 +4584,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "TOYOTA 1KD (3.0L ) / 2KD ( 2.5L ) V4 DIESEL ENGINE.",
     images: ["/images/inventory/Toyota_1KD_3.0L__7/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4348,6 +4598,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING \ud83d\ude9b\ud83c\udf8a",
     images: [
       "/images/inventory/UNSORTED__6/img_01.jpg",
       "/images/inventory/UNSORTED__6/img_02.jpg",
@@ -4367,6 +4618,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING \ud83d\ude9b\ud83c\udf8a",
     images: [
       "/images/inventory/UNSORTED__7/img_01.jpg",
       "/images/inventory/UNSORTED__7/img_02.jpg",
@@ -4384,6 +4636,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING \ud83d\ude9b\ud83c\udf8a",
     images: ["/images/inventory/UNSORTED__8/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4397,6 +4650,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING \ud83d\ude9b\ud83c\udf8a",
     images: ["/images/inventory/UNSORTED__9/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4410,6 +4664,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING \ud83d\ude9b\ud83c\udf8a",
     images: ["/images/inventory/UNSORTED__10/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4423,6 +4678,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOOKING FOR TOP QUALITY USED VEHICLE PARTS...?",
     images: ["/images/inventory/UNSORTED__11/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4436,6 +4692,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "ALL KINDS OF COMPLETE HALFCUTS AND ENGINES\u2026",
     images: ["/images/inventory/HalfCut__5/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4449,6 +4706,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HALF CUT NISSAN NAVARA YD25",
     images: [
       "/images/inventory/Nissan_YD25__4/img_01.jpg",
       "/images/inventory/Nissan_YD25__4/img_02.jpg",
@@ -4466,6 +4724,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "HALF CUT NISSAN NAVARA /PATHFINDER  ZD30",
     images: [
       "/images/inventory/Nissan_ZD30/img_01.jpg",
       "/images/inventory/Nissan_ZD30/img_02.jpg",
@@ -4484,6 +4743,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__12/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4497,6 +4757,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__13/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4510,6 +4771,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__14/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4523,6 +4785,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__15/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4536,6 +4799,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__16/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4549,6 +4813,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__17/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4562,6 +4827,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__18/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4575,6 +4841,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__19/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4588,6 +4855,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__20/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4601,6 +4869,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: [
       "/images/inventory/UNSORTED__21/img_01.jpg",
       "/images/inventory/UNSORTED__21/img_02.jpg",
@@ -4620,6 +4889,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: [
       "/images/inventory/UNSORTED__22/img_01.jpg",
       "/images/inventory/UNSORTED__22/img_02.jpg",
@@ -4639,6 +4909,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__23/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4652,6 +4923,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__24/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4665,6 +4937,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__25/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4678,6 +4951,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__26/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4691,6 +4965,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING... \ud83d\ude9b\ud83d\udea2",
     images: ["/images/inventory/UNSORTED__27/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4704,6 +4979,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING....",
     images: ["/images/inventory/UNSORTED__28/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl: "https://www.facebook.com/reel/380923327858249/",
@@ -4716,6 +4992,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "3.0L",
     models: [],
+    caption: "ISUZU 4JJ1 TURBO INTER COOLER - DMAX \u2013 3.0 L DIESEL ENGINE.",
     images: [
       "/images/inventory/Isuzu_4JJ1_3.0L__2/img_01.jpg",
       "/images/inventory/Isuzu_4JJ1_3.0L__2/img_02.jpg",
@@ -4733,6 +5010,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "MITSUBISHI 4D56-U  2.5L V4 DIESEL ENGINE.",
     images: [
       "/images/inventory/Mitsubishi_4D56-U_2.5L__5/img_01.jpg",
       "/images/inventory/Mitsubishi_4D56-U_2.5L__5/img_02.jpg",
@@ -4750,6 +5028,7 @@ export const listings: Listing[] = [
     fuel: "Diesel",
     displacement: "2.5L",
     models: [],
+    caption: "NISSAN YD25 2.5L V4 TURBO CHARGED DIESEL ENGINE",
     images: [
       "/images/inventory/Nissan_YD25_2.5L__7/img_01.jpg",
       "/images/inventory/Nissan_YD25_2.5L__7/img_02.jpg",
@@ -4769,6 +5048,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "ALL KINDS OF HYUNDAI H1 HALFCUTS AND ENGINES\u2026",
     images: ["/images/inventory/Hyundai_H1__2/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4782,6 +5062,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "OFF LOADING..\ud83c\udf8a\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__29/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4795,6 +5076,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "OFF LOADING..\ud83c\udf8a\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__30/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4808,6 +5090,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "OFF LOADING..\ud83c\udf8a\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__31/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4821,6 +5104,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "OFF LOADING..\ud83c\udf8a\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__32/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4834,6 +5118,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "OFF LOADING..\ud83c\udf8a\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__33/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4847,6 +5132,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "OFF LOADING..\ud83c\udf8a\ud83d\ude9b",
     images: [
       "/images/inventory/UNSORTED__34/img_01.jpg",
       "/images/inventory/UNSORTED__34/img_02.jpg",
@@ -4863,6 +5149,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "OFF LOADING..\ud83c\udf8a\ud83d\ude9b",
     images: [
       "/images/inventory/UNSORTED__35/img_01.jpg",
       "/images/inventory/UNSORTED__35/img_02.jpg",
@@ -4880,6 +5167,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "OFF LOADING..\ud83c\udf8a\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__36/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4893,6 +5181,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "OFF LOADING..\ud83c\udf8a\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__37/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4906,6 +5195,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING..\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__38/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4919,6 +5209,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING..\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__39/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4932,6 +5223,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING..\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__40/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4945,6 +5237,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING..\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__41/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4958,6 +5251,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING..\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__42/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4971,6 +5265,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING..\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__43/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4984,6 +5279,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING..\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__44/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -4997,6 +5293,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING..\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__45/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -5010,6 +5307,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING..\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__46/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -5023,6 +5321,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING..\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__47/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -5036,6 +5335,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING..\ud83d\ude9b",
     images: ["/images/inventory/UNSORTED__48/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:
@@ -5049,6 +5349,7 @@ export const listings: Listing[] = [
     fuel: "",
     displacement: "",
     models: [],
+    caption: "LOADING..\ud83d\ude9b\ud83c\udf8a",
     images: ["/images/inventory/UNSORTED__49/img_01.jpg"],
     whatsapp: "971-508-997-740",
     postUrl:

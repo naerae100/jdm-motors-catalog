@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 
+import { ChatWidget } from "@/components/agent/ChatWidget";
 import { FilterPanel } from "@/components/catalogue/FilterPanel";
 import { ListingCard } from "@/components/catalogue/ListingCard";
 import { ListingDialog } from "@/components/catalogue/ListingDialog";
@@ -53,7 +54,7 @@ export const Route = createFileRoute("/")({
   component: Catalogue,
 });
 
-const COMPANY_WHATSAPP = "https://wa.me/971501234567";
+const COMPANY_WHATSAPP = "https://wa.me/971508997740";
 
 function Catalogue() {
   const [filters, setFilters] = useState<Filters>(emptyFilters);
@@ -417,6 +418,8 @@ function Catalogue() {
       </footer>
 
       <ListingDialog listing={selected} onClose={() => setSelected(null)} />
+
+      <ChatWidget liftAboveBar={inquiryCart.length > 0} />
     </div>
   );
 }

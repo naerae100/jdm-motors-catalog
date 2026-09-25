@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 import JSZip from "jszip";
-import { saveAs } from "file-saver";
+import fileSaver from "file-saver";
+const { saveAs } = fileSaver;
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";

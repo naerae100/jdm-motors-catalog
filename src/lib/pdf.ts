@@ -31,9 +31,10 @@ export async function generateSpecSheet(listing: Listing) {
 
   try {
     // Add main image if available
-    if (listing.images.length > 0) {
+    const firstImage = listing.images[0];
+    if (firstImage) {
       const img = new Image();
-      img.src = listing.images[0];
+      img.src = firstImage;
       await new Promise((resolve) => {
         img.onload = resolve;
         img.onerror = resolve;
