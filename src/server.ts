@@ -44,9 +44,22 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+/** Endpoint the catalogue's chat widget posts to. */
+const CHAT_PATH = "/api/chat";
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      // Handled before the router, and imported dynamically on purpose: a static
+      // import would pull the agent (and the OpenAI SDK) into this entry chunk,
+      // which grows it past the bundler's split threshold. The resulting split
+      // creates a circular import that breaks every page render. See
+      // src/lib/agent/http.ts.
+      if (new URL(request.url).pathname === CHAT_PATH) {
+        const { handleChatRequest } = await import("./lib/agent/http");
+        return await handleChatRequest(request, env);
+      }
+
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);

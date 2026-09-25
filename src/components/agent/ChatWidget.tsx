@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { BUSINESS } from "@/lib/agent/policy";
-import { sendToAgent, type AgentResult } from "@/lib/agent/chat-fn";
+import type { AgentResult } from "@/lib/agent/http";
 import type { AgentTurn, PhotoAttachment } from "@/lib/agent/types";
 import { cn } from "@/lib/utils";
 
@@ -102,9 +102,12 @@ export function ChatWidget({ liftAboveBar = false }: { liftAboveBar?: boolean })
       setBusy(true);
 
       try {
-        const result: AgentResult = await sendToAgent({
-          data: { message: trimmed, history: history.slice(-MAX_TURNS_KEPT) },
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ message: trimmed, history: history.slice(-MAX_TURNS_KEPT) }),
         });
+        const result = (await response.json()) as AgentResult;
 
         if (!result.ok) {
           setFailed(true);
