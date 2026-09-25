@@ -16,7 +16,6 @@ import { ChatWidget } from "@/components/agent/ChatWidget";
 import { FilterPanel } from "@/components/catalogue/FilterPanel";
 import { ListingCard } from "@/components/catalogue/ListingCard";
 import { ListingDialog } from "@/components/catalogue/ListingDialog";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
@@ -213,31 +212,27 @@ function Catalogue() {
         {/* Abstract background glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background/50 to-background pointer-events-none" />
 
-        <div className="mx-auto max-w-[1600px] px-4 py-16 sm:px-6 sm:py-24 relative z-10 flex flex-col items-center text-center">
-          <Badge
-            variant="outline"
-            className="mb-6 text-primary border-primary/30 bg-primary/5 uppercase tracking-widest text-[10px] px-3 py-1 shadow-sm"
-          >
-            Worldwide Wholesale Export
-          </Badge>
-          <h1 className="max-w-4xl text-4xl font-black uppercase tracking-tight leading-[1.05] sm:text-6xl text-foreground">
-            Premium Japanese & Korean Engines, <br className="hidden sm:block" />
-            <span className="text-primary">Half Cuts & Gearboxes</span>
+        {/* Deliberately short. Buyers come here to search stock, so the first
+            screen has to reach the listings — not sell them on the company. */}
+        <div className="relative z-10 mx-auto flex max-w-[1600px] flex-col items-center px-4 py-5 text-center sm:px-6 sm:py-7">
+          <h1 className="max-w-4xl text-xl font-black uppercase leading-[1.1] tracking-tight text-foreground sm:text-3xl">
+            Premium Japanese &amp; Korean Engines,{" "}
+            <span className="text-primary">Half Cuts &amp; Gearboxes</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            Directly from our Sharjah yard to Africa, the Gulf, South America, and Asia. Browse our
-            massive container-ready inventory and contact us for bulk pricing.
+          <p className="mt-2 max-w-2xl text-xs text-muted-foreground sm:text-sm">
+            Direct from our Sharjah yard to Africa, the Gulf, South America and Asia —
+            container-ready, bulk only.
           </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-4 sm:gap-6 text-xs">
+          <div className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1.5 text-[10px] sm:gap-x-6">
             {[
               "Tested & Inspected",
               "Container Consolidation",
               "Worldwide Shipping",
               "Bulk Only",
             ].map((t) => (
-              <span key={t} className="flex items-center gap-2 text-muted-foreground">
-                <div className="size-1.5 rounded-full bg-primary/70" />
+              <span key={t} className="flex items-center gap-1.5 text-muted-foreground">
+                <div className="size-1 rounded-full bg-primary/70" />
                 <span className="label-caps">{t}</span>
               </span>
             ))}
