@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 
-import { ChatWidget } from "@/components/agent/ChatWidget";
 import { FilterPanel } from "@/components/catalogue/FilterPanel";
 import { ListingCard } from "@/components/catalogue/ListingCard";
 import { ListingDialog } from "@/components/catalogue/ListingDialog";
@@ -418,8 +417,6 @@ function Catalogue() {
       </footer>
 
       <ListingDialog listing={selected} onClose={() => setSelected(null)} />
-
-      <ChatWidget liftAboveBar={inquiryCart.length > 0} />
     </div>
   );
 }

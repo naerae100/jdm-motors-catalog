@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { BUSINESS } from "@/lib/agent/policy";
-import { sendToAgent, type AgentResult } from "@/lib/agent/server";
+import { sendToAgent, type AgentResult } from "@/lib/agent/chat-fn";
 import type { AgentTurn, PhotoAttachment } from "@/lib/agent/types";
 import { cn } from "@/lib/utils";
 

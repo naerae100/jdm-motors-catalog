@@ -1,4 +1,3 @@
-import OpenAI from "openai";
 import type {
   ChatCompletionMessageParam,
   ChatCompletionTool,
@@ -41,13 +40,25 @@ function toWireMessages(system: string, turns: AgentTurn[]): ChatCompletionMessa
 }
 
 export function createOpenAiProvider(apiKey: string, model?: string): LlmProvider {
-  const client = new OpenAI({ apiKey });
   const resolved = model ?? process.env["OPENAI_MODEL"] ?? DEFAULT_MODEL;
+
+  // The SDK is imported on first use, not at module load. A static import pulls
+  // it into the SSR entry chunk, which grows the graph enough that the bundler
+  // splits that chunk — and the split produces a broken cross-chunk binding
+  // (`createCsrfMiddleware is not a function`, every page 500s). Keeping it
+  // dynamic also means page renders never pay to load it.
+  let clientPromise: Promise<InstanceType<typeof import("openai").default>> | null = null;
+  const getClient = async () => {
+    clientPromise ??= import("openai").then((m) => new m.default({ apiKey }));
+    return clientPromise;
+  };
 
   return {
     id: "openai",
     model: resolved,
     async complete(req: LlmRequest): Promise<LlmResponse> {
+      const client = await getClient();
+
       const tools: ChatCompletionTool[] = req.tools.map((t) => ({
         type: "function",
         function: {
