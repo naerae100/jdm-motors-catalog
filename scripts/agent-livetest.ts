@@ -124,6 +124,19 @@ const SCENARIOS: Scenario[] = [
     ],
   },
   {
+    name: "spanish",
+    turns: ["\u00bfBuenas tardes, tienen motores diesel de Nissan?"],
+    checks: [
+      noPrice,
+      noTells,
+      {
+        label: "replied in Spanish",
+        pass: (_r, t) => /[\u00f1\u00e1\u00e9\u00ed\u00f3\u00fa\u00fc\u00bf\u00a1]/i.test(t),
+      },
+      { label: "found real stock", pass: (r) => r.some((x) => x.photos.length > 0) },
+    ],
+  },
+  {
     name: "arabic",
     turns: ["السلام عليكم، عندكم محرك نيسان ديزل؟"],
     checks: [
