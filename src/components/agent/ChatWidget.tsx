@@ -1,5 +1,5 @@
 import { MessageCircle, Send, X } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -60,6 +60,10 @@ export function ChatWidget({ liftAboveBar = false }: { liftAboveBar?: boolean })
   const [failed, setFailed] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  // Mobile keyboards shrink the *visual* viewport but not the layout viewport, so a
+  // `fixed` panel keeps its full height and the composer ends up behind the keyboard.
+  // Tracking visualViewport and sizing the panel to it is the only reliable fix on iOS.
+  const [viewport, setViewport] = useState<{ height: number; top: number } | null>(null);
 
   // Restore after mount only — reading storage during render would desync SSR markup.
   useEffect(() => {
@@ -88,7 +92,33 @@ export function ChatWidget({ liftAboveBar = false }: { liftAboveBar?: boolean })
   }, [bubbles, busy, open]);
 
   useEffect(() => {
-    if (open) inputRef.current?.focus();
+    if (!open) return;
+    const vp = window.visualViewport;
+    if (!vp) return;
+    const sync = () => setViewport({ height: vp.height, top: vp.offsetTop });
+    sync();
+    vp.addEventListener("resize", sync);
+    vp.addEventListener("scroll", sync);
+    return () => {
+      vp.removeEventListener("resize", sync);
+      vp.removeEventListener("scroll", sync);
+    };
+  }, [open]);
+
+  // Full-screen on phones, so the catalogue behind must not scroll under it.
+  // 640px matches Tailwind's `sm:`, where the panel becomes a floating card again.
+  useEffect(() => {
+    if (!open || !window.matchMedia("(max-width: 639px)").matches) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
+
+  useEffect(() => {
+    // Focusing on a phone throws the keyboard up before the buyer has read anything.
+    if (open && window.matchMedia("(min-width: 640px)").matches) inputRef.current?.focus();
   }, [open]);
 
   const send = useCallback(
@@ -162,10 +192,18 @@ export function ChatWidget({ liftAboveBar = false }: { liftAboveBar?: boolean })
         <div
           role="dialog"
           aria-label="Sales chat"
+          style={
+            {
+              "--chat-h": viewport ? `${viewport.height}px` : "100dvh",
+              "--chat-top": viewport ? `${viewport.top}px` : "0px",
+            } as CSSProperties
+          }
           className={cn(
             "fixed z-50 flex flex-col overflow-hidden border bg-card shadow-2xl",
-            "inset-x-3 bottom-3 top-16 rounded-2xl",
-            "sm:inset-x-auto sm:top-auto sm:right-6 sm:h-[600px] sm:max-h-[calc(100vh-6rem)] sm:w-[390px]",
+            // Phone: fill the visible viewport, which excludes the keyboard.
+            "left-0 right-0 top-[var(--chat-top)] h-[var(--chat-h)] rounded-none",
+            // Desktop: back to a floating card, anchored bottom-right.
+            "sm:left-auto sm:right-6 sm:top-auto sm:h-[600px] sm:max-h-[calc(100vh-6rem)] sm:w-[390px] sm:rounded-2xl",
             liftAboveBar ? "sm:bottom-32" : "sm:bottom-6",
           )}
         >
@@ -198,7 +236,7 @@ export function ChatWidget({ liftAboveBar = false }: { liftAboveBar?: boolean })
             </button>
           </header>
 
-          <div className="flex-1 space-y-2.5 overflow-y-auto bg-muted/40 p-3.5">
+          <div className="min-h-0 flex-1 space-y-2.5 overflow-y-auto overscroll-contain bg-muted/40 p-3.5">
             {shown.map((b) => (
               <div
                 key={b.id}
