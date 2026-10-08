@@ -59,6 +59,7 @@ export function ChatWidget({ liftAboveBar = false }: { liftAboveBar?: boolean })
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   // Mobile keyboards shrink the *visual* viewport but not the layout viewport, so a
   // `fixed` panel keeps its full height and the composer ends up behind the keyboard.
@@ -87,9 +88,13 @@ export function ChatWidget({ liftAboveBar = false }: { liftAboveBar?: boolean })
     }
   }, [bubbles, history]);
 
+  // Scroll the list itself rather than scrollIntoView, which on mobile can scroll
+  // the page behind the panel instead of the conversation.
   useEffect(() => {
-    if (open) endRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [bubbles, busy, open]);
+    if (!open) return;
+    const el = scrollRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [bubbles, busy, open, viewport]);
 
   useEffect(() => {
     if (!open) return;
@@ -236,56 +241,61 @@ export function ChatWidget({ liftAboveBar = false }: { liftAboveBar?: boolean })
             </button>
           </header>
 
-          <div className="min-h-0 flex-1 space-y-2.5 overflow-y-auto overscroll-contain bg-muted/40 p-3.5">
-            {shown.map((b) => (
-              <div
-                key={b.id}
-                className={cn("flex", b.from === "buyer" ? "justify-end" : "justify-start")}
-              >
+          <div
+            ref={scrollRef}
+            className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-muted/40"
+          >
+            <div className="flex min-h-full flex-col justify-end gap-2.5 p-3.5">
+              {shown.map((b) => (
                 <div
-                  className={cn(
-                    "max-w-[85%] rounded-2xl px-3.5 py-2 text-sm shadow-sm",
-                    b.from === "buyer"
-                      ? "rounded-br-sm bg-whatsapp text-whatsapp-foreground"
-                      : "rounded-bl-sm bg-card",
-                  )}
+                  key={b.id}
+                  className={cn("flex", b.from === "buyer" ? "justify-end" : "justify-start")}
                 >
-                  <p className="whitespace-pre-wrap break-words">{b.text}</p>
-                  {b.photos && b.photos.length > 0 && <PhotoGrid photos={b.photos} />}
+                  <div
+                    className={cn(
+                      "max-w-[85%] rounded-2xl px-3.5 py-2 text-sm shadow-sm",
+                      b.from === "buyer"
+                        ? "rounded-br-sm bg-whatsapp text-whatsapp-foreground"
+                        : "rounded-bl-sm bg-card",
+                    )}
+                  >
+                    <p className="whitespace-pre-wrap break-words">{b.text}</p>
+                    {b.photos && b.photos.length > 0 && <PhotoGrid photos={b.photos} />}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
 
-            {busy && (
-              <div className="flex justify-start">
-                <div className="rounded-2xl rounded-bl-sm bg-card px-4 py-3 shadow-sm">
-                  <span className="flex gap-1">
-                    {[0, 150, 300].map((d) => (
-                      <span
-                        key={d}
-                        className="size-1.5 animate-bounce rounded-full bg-muted-foreground"
-                        style={{ animationDelay: `${d}ms` }}
-                      />
-                    ))}
-                  </span>
+              {busy && (
+                <div className="flex justify-start">
+                  <div className="rounded-2xl rounded-bl-sm bg-card px-4 py-3 shadow-sm">
+                    <span className="flex gap-1">
+                      {[0, 150, 300].map((d) => (
+                        <span
+                          key={d}
+                          className="size-1.5 animate-bounce rounded-full bg-muted-foreground"
+                          style={{ animationDelay: `${d}ms` }}
+                        />
+                      ))}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
 
-            {failed && (
-              <div className="rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-xs">
-                <p className="text-destructive">Couldn't send that just now.</p>
-                <a
-                  href={`https://wa.me/${BUSINESS.whatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 inline-block font-medium underline"
-                >
-                  Message us on WhatsApp instead
-                </a>
-              </div>
-            )}
-            <div ref={endRef} />
+              {failed && (
+                <div className="rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-xs">
+                  <p className="text-destructive">Couldn't send that just now.</p>
+                  <a
+                    href={`https://wa.me/${BUSINESS.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block font-medium underline"
+                  >
+                    Message us on WhatsApp instead
+                  </a>
+                </div>
+              )}
+              <div ref={endRef} />
+            </div>
           </div>
 
           <form
